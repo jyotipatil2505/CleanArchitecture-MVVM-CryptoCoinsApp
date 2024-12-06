@@ -84,23 +84,23 @@ This project follows the **MVVM** (Model-View-ViewModel) architecture pattern, w
   ├── Domain/                                               # Contains business logic, which is independent of frameworks and UI.
   │   ├── UseCases                                          # Encapsulates specific business logic.
   │   │   ├── GetCryptoCoinsUseCase.swift                   # Handles the use case of fetching a list of crypto coins from data sources.
-  │   ├── Repositories                                      # Displays list of articles
-  │   │   ├── CryptoRepositoryProtocol.swift                # Defines the `NewsRepositoryProtocol`, which outlines the methods for fetching articles and interacting with news data.
-  │   ├── Entities                                          # Displays list of articles
-  │   │   ├── CryptoCoinModel.swift                         # Defines the `NewsRepositoryProtocol`, which outlines the methods for fetching articles and interacting with news data.
-  ├── Data/
-  │   ├── DataSources                                       # Displays list of articles
-  │   │   ├── Local                                         # Defines the `NewsRepositoryProtocol`, which outlines the methods for fetching articles and interacting with news data.
-  │   │   │   ├── Mappers                                   # Defines the `NewsRepositoryProtocol`, which outlines the methods for fetching articles and interacting with news data.
-  │   │   │   │   ├── CryptoCoinModel+RealmMapper.swift     # Defines the `NewsRepositoryProtocol`, which outlines the methods for fetching articles and interacting with news data.
-  │   │   │   │   ├── CryptoCoinRealm+DomainMapper.swift    # Defines the `NewsRepositoryProtocol`, which outlines the methods for fetching articles and interacting with news data.
-  │   │   │   ├── Models                                    # Defines the `NewsRepositoryProtocol`, which outlines the methods for fetching articles and interacting with news data.
-  │   │   │   ├── CryptoLocalDataSource.swift               # Defines the `NewsRepositoryProtocol`, which outlines the methods for fetching articles and interacting with news data.
-  │   │   │   ├── CryptoLocalDataSourceImpl.swift           # Defines the `NewsRepositoryProtocol`, which outlines the methods for fetching articles and interacting with news data.
-  │   │   │   ├── LocalStorageError.swift                   # Defines the `NewsRepositoryProtocol`, which outlines the methods for fetching articles and interacting with news data.
-  │   │   ├── Network                                       # Defines the `NewsRepositoryProtocol`, which outlines the methods for fetching articles and interacting with news data.
-  │   │   │   ├── CryptoNetworkDataSource.swift             # Defines the `NewsRepositoryProtocol`, which outlines the methods for fetching articles and interacting with news data.
-  │   │   │   ├── CryptoNetworkDataSourceImpl.swift         # Defines the `NewsRepositoryProtocol`, which outlines the methods for fetching articles and interacting with news data.
+  │   ├── Repositories                                      # Defines interfaces for data operations.
+  │   │   ├── CryptoRepositoryProtocol.swift                # Outlines the methods for interacting with crypto coin data sources (local or network).
+  │   ├── Entities                                          # Represents core application models.
+  │   │   ├── CryptoCoinModel.swift                         # Data model defining the structure of a crypto coin entity.
+  ├── Data/                                                 
+  │   ├── DataSources                                       
+  │   │   ├── Local                                         # Handles local storage of crypto coin data.
+  │   │   │   ├── Mappers                                   # Converts data between local and domain models.
+  │   │   │   │   ├── CryptoCoinModel+RealmMapper.swift     # Maps between CryptoCoinModel and Realm model.
+  │   │   │   │   ├── CryptoCoinRealm+DomainMapper.swift    # Maps between Realm model and domain model.
+  │   │   │   ├── Models                                    # Contains Realm database models for storing crypto coin data.
+  │   │   │   ├── CryptoLocalDataSource.swift               # Protocol for local data operations.
+  │   │   │   ├── CryptoLocalDataSourceImpl.swift           # Implementation of local data operations.
+  │   │   │   ├── LocalStorageError.swift                   # Defines errors related to local storage operations.
+  │   │   ├── Network                                       # Handles fetching data from remote sources.
+  │   │   │   ├── CryptoNetworkDataSource.swift             # Protocol for network operations.
+  │   │   │   ├── CryptoNetworkDataSourceImpl.swift         # Implementation of network operations.
   │   ├── Repositories                                      # Displays list of articles
   │   │   ├── CryptoRepository.swift                        # Defines the `NewsRepositoryProtocol`, which outlines the methods for fetching articles and interacting with news data.
   ├── Core/
