@@ -1,6 +1,7 @@
 # CryptoFinder App
 
-The **CryptoFinder App** is a UIKit-based Mobile application designed to create a Crypto Coin List application that displays a list of cryptocurrency coins, allowing users to filter and search through the list using various options.
+The **CryptoFinder App** is a sleek and intuitive UIKit-based mobile application designed to provide users with an organized and interactive list of cryptocurrency coins. With a clean and user-friendly interface, the app allows users to effortlessly explore a wide range of crypto coins.
+
 
 ## Table of Contents
 
@@ -9,7 +10,6 @@ The **CryptoFinder App** is a UIKit-based Mobile application designed to create 
 - [Architecture](#architecture)
 - [Screenshots](#screenshots)
 - [Installation](#installation)
-- [API Integration](#api-integration)
 - [Usage](#usage)
 - [Contributing](#contributing)
 - [License](#license)
@@ -22,7 +22,7 @@ The CryptoFinder app aims to simplify how users consume news by aggregating arti
 
 ## Features
 
-1. **Crypto Coin List**:
+1. **Crypto Coins List**:
    - Displays a comprehensive list of crypto coins.
    - Each coin view includes:
      - **Name**
@@ -41,22 +41,29 @@ The CryptoFinder app aims to simplify how users consume news by aggregating arti
 
 ## Screenshots
 
-#### CryptoCoinList Screen
-<img src="https://github.com/jyotipatil2505/News-Reader-Swift-UI/blob/main/NewsApp/Screenshots/TopHeadlines.png" alt="Home Screen" width="240" />
+#### CryptoCoinsList Screen
+<img src="https://github.com/jyotipatil2505/CleanArchitecture-MVVM-CryptoCoinsApp/blob/main/CryptoCoin/Screenshots/CryptoCoinListScreen.png" alt="Home Screen" width="240" />
 
-#### Filter CryptoCoins View
-<img src="https://github.com/jyotipatil2505/News-Reader-Swift-UI/blob/main/NewsApp/Screenshots/ArticleDetails.png" alt="Article Detail Screen" width="240" />
+#### Filter Coins by Status/Type View
+<img src="https://github.com/jyotipatil2505/CleanArchitecture-MVVM-CryptoCoinsApp/blob/main/CryptoCoin/Screenshots/FilterView.png" alt="Article Detail Screen" width="240" />
+
+#### Search for a Coin Screen
+<img src="https://github.com/jyotipatil2505/CleanArchitecture-MVVM-CryptoCoinsApp/blob/main/CryptoCoin/Screenshots/SearchedCryptoCoinList.png" alt="Article Detail Screen" width="240" />
 
 
 ## Architecture
 
-This project follows the **MVVM** (Model-View-ViewModel) architecture pattern, which helps keep the code modular, maintainable, and testable.
+This project follows the **Clean Architecture - Model-View-ViewModel** architecture pattern, which helps keep the code modular, maintainable, and testable.
 
-- **Model**: Represents the app data, such as `Article`. It defines the structure of the data and how it can be encoded/decoded.
+- **Presentation Layer**: Manages the user interface (UI) and handles user interactions.
   
-- **View**: SwiftUI views that display the data and handle user interactions. These are responsible for rendering the user interface and responding to user input.
+- **Domain Layer**: Contains the core business logic and is independent of any framework or technology.
   
-- **ViewModel**: Contains the business logic, communicates with the service layer, and provides data to the View. It acts as an intermediary between the Model and the View, managing the state and behavior of the UI.
+- **Data Layer**: Responsible for data management and access from various sources (network, local storage).
+
+- **Core Layer**: Contains reusable utilities and application-wide resources.
+
+- **Infrastructure Layer**: Provides foundational services like network communication and configuration.
 
 
 ## Folder Structure
@@ -165,90 +172,24 @@ To set up the CryptoFinder App on your local machine, follow these steps:
 4. Run the app on a simulator or a physical device by pressing Cmd + R.
 
 
-## API Integration
-
-The CryptoFinder app utilizes the [NewsAPI](https://newsapi.org/) to fetch articles. This integration allows the app to display real-time news updates across various categories.
-
-### Getting Started with NewsAPI
-
-1. **Sign Up for an API Key**: 
-   - Visit [NewsAPI.org](https://newsapi.org/) and create an account to obtain your API key. This key is essential for making requests to the API.
-
-2. **Add Your API Key**: 
-   - Once you have your API key, open the `APIConfig.swift` file in your project.
-   - Replace the placeholder API key with your actual key:
-
-
-   ```swift
-   static let apiKey: String = "YOUR_API_KEY"
-
-### Example API Request
-
-The CryptoFinder app makes use of the `NewsRepository` class to handle requests to the NewsAPI. 
-
-- Below is an example of how to fetch the top headlines and handle the response.:
-
-   ```swift
-   let endpoint = category == .all || category == nil ? Endpoint.topHeadlines() : Endpoint.topHeadlines(category: category?.rawValue)
-        APIManager.shared.request(endpoint: endpoint) { (result: Result<NewsResponse, NetworkError>) in
-            switch result {
-            case .success(let newsResponse):
-                completion(.success(newsResponse.articles))
-            case .failure(let error):
-                print("error :::::: ",error)
-                completion(.failure(error))
-            }
-        }
-
-### Fetching Articles by Category
-
-   To enhance user experience, the CryptoFinder app allows you to fetch articles filtered by specific categories. You can specify a category when calling the `fetchNews` method in the `NewsService`. 
-
-- Below is an example of how to request articles related to a specific category, such as Business::
-
-   ```swift
-   newsService.fetchNews(category: .business) { result in
-       switch result {
-       case .success(let articles):
-           // Use the fetched articles
-           print("Business articles: \(articles)")
-       case .failure(let error):
-           // Handle any errors that occur
-           print("Error fetching business articles: \(error.localizedDescription)")
-       }
-   }
-   
-
-### Supported Categories
-
-The CryptoFinder app provides users with the ability to filter articles based on various news categories. This feature helps users easily find news that aligns with their interests. Below are the supported categories:
-
-- **All**: Displays all available articles from different sources, providing a comprehensive view of current events.
-- **Business**: Articles related to business news, including market updates, financial news, and economic trends.
-- **Entertainment**: Covers news from the entertainment industry, including movies, music, celebrity gossip, and events.
-- **Health**: Articles focusing on health-related topics, including wellness tips, medical breakthroughs, and health news.
-- **Science**: Features articles about scientific discoveries, research findings, and innovations across various fields.
-- **Sports**: News related to sports events, athlete performances, and updates from the sports world.
-- **Technology**: Articles about the latest trends in technology, gadget reviews, software updates, and tech industry news.
-
-Users can select any of these categories to tailor their news feed according to their preferences, making it easier to stay informed about topics that matter to them.
-
-
 ## Usage
 
 To use the CryptoFinder app, follow these steps:
 
 1. **Launch the App**: 
-   Open the CryptoFinder app on your device or simulator. You will be greeted with the home screen displaying the latest articles.
+   Open the CryptoFinder app on your device or simulator. You will be greeted with the home screen displaying the list of Crypto Coins.
 
-2. **View Articles**: 
-   Tap on any article to read its full content. This will navigate you to a detailed view of the article where you can find additional information.
+2. **Filter Coins by Status/Type**: 
+   Tap on the filter option to apply multiple filters at once and narrow down the list of coins.
+   - Filter by Active Status: Filter coins to show only active or inactive coins.
+   - Filter by Coin Type: Filter coins based on their type (e.g., "Token", "Coin").
+   - Filter by New Crypto: Show only new cryptocurrencies.
 
-3. **Bookmark Articles**: 
-   Use the bookmark feature to save articles for later reading. This allows you to easily revisit your favorite articles without having to search for them again.
+3. **Search for a Coin**: 
+   Tap on the search bar to search for a specific coin by:
+   - Coin Name: Type the name of the coin (e.g., Bitcoin).
+   - Coin Symbol: Type the symbol (e.g., BTC).
 
-4. **Filter News by Category**: 
-   Use the grid-based menu to filter news articles by category. Select from various categories such as Business, Entertainment, Health, Science, Sports, Technology, or All to customize your news feed based on your interests.
 
 ## Contributing
 
@@ -261,7 +202,7 @@ Contributions to the CryptoFinder app are welcome and encouraged! To contribute 
    Clone your forked repository to your local machine using the command:
 
    ```bash
-   git clone https://github.com/your-username/News-Reader-Swift-UI.git
+   git clone https://github.com/jyotipatil2505/CleanArchitecture-MVVM-CryptoCoinsApp.git
 
 3. Create a New Branch: Navigate to the project directory and create a new branch for your feature or bug fix:
 
@@ -291,8 +232,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 We would like to acknowledge the following resources and contributors that have made this project possible:
 
-- **NewsAPI**: Thank you to [NewsAPI](https://newsapi.org/) for providing a comprehensive and reliable source of news articles.
-- **SwiftUI**: Special thanks to [SwiftUI](https://developer.apple.com/xcode/swiftui/) for the assistance in creating beautiful interfaces for this project and for providing resources that helped in developing the code.
+- **Clean Architecture**: Thank you to [Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) for providing a comprehensive and reliable framework for building scalable and maintainable software.
+- **UIKit**: Special thanks to [UIKit](https://developer.apple.com/documentation/uikit/) for building user interfaces on iOS. UIKit has been instrumental in creating beautiful and responsive user interfaces for this project.
+- **Swift**: Thank you to [Swift](https://www.swift.org/documentation/), Apple’s powerful and intuitive programming language.. Swift has been the backbone of this project, providing both performance and safety for writing high-quality code.
 
 If you find this project useful, consider giving it a star on GitHub or contributing to its development!
 
