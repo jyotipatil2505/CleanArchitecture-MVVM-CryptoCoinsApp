@@ -74,9 +74,9 @@ This project follows the **Clean Architecture - Model-View-ViewModel** architect
   CryptoCoin/
   |
   ├── Screenshots/
-  │   ├── Bookmarks.png                                     # Displays the list of bookmarked articles, allowing users to easily access their saved content.
-  │   ├── TopHeadlines.png                                  # Shows the screen displaying the top headlines, presenting an overview of the latest articles available in the news
-  │   └── ArticleDetails.png                                # Illustrates the detailed view of an article, providing users with in-depth information and content related to the selected news item.
+  │   ├── CryptoCoinListScreen.png                          # Displays the main screen of the CryptoCoin app, showing a list of available cryptocurrency coins.
+  │   ├── FilterView.png                                    # Demonstrates the filter functionality within the app
+  │   └── SearchedCryptoCoinList.png                        # Illustrates the detailed view of the searched list of cryptocurrency coins
   ├── Application/                                          # Core presentation layer of the application, handling UI logic and user interaction.
   │   ├── ViewModels                                        # Contains logic to manage the UI data.
   │   │   ├── CryptoListViewModel.swift                     # Manages the logic for fetching and preparing crypto coin data for display in the UI.
