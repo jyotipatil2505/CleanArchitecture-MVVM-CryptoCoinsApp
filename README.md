@@ -231,8 +231,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 We would like to acknowledge the following resources and contributors that have made this project possible:
 
-- **NewsAPI**: Thank you to [UIKit]([https://newsapi.org/](https://developer.apple.com/documentation/uikit/)) for providing a comprehensive and reliable source of news articles.
-- **UIKit**: Special thanks to [UIKit](https://developer.apple.com/documentation/uikit/)) for the assistance in creating beautiful interfaces for this project and for providing resources that helped in developing the code.
+- **Clean Architecture**: Thank you to [Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) for providing a comprehensive and reliable framework for building scalable and maintainable software.
+- **UIKit**: Special thanks to [UIKit](https://developer.apple.com/documentation/uikit/) building user interfaces on iOS. UIKit has been instrumental in creating beautiful and responsive user interfaces for this project.
+- **Swift**: Thank you to [Swift](https://www.swift.org/documentation/) Apple’s powerful and intuitive programming language.. Swift has been the backbone of this project, providing both performance and safety for writing high-quality code.
 
 If you find this project useful, consider giving it a star on GitHub or contributing to its development!
 
