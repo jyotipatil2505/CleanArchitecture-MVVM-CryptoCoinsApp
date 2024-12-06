@@ -1,6 +1,7 @@
 # CryptoFinder App
 
-The **CryptoFinder App** is a UIKit-based Mobile application designed to create a Crypto Coin List application that displays a list of cryptocurrency coins, allowing users to filter and search through the list using various options.
+The **CryptoFinder App** is a sleek and intuitive UIKit-based mobile application designed to provide users with an organized and interactive list of cryptocurrency coins. With a clean and user-friendly interface, the app allows users to effortlessly explore a wide range of crypto coins.
+
 
 ## Table of Contents
 
