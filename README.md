@@ -18,7 +18,7 @@ The **CryptoFinder App** is a sleek and intuitive UIKit-based mobile application
 
 ## Overview
 
-The CryptoFinder app aims to simplify how users consume news by aggregating articles from multiple sources and presenting them in an easy-to-navigate format. The application includes essential features such as bookmarking articles for offline reading and filtering news by category to enhance user experience.
+The CryptoFinder App is a user-friendly cryptocurrency coin listing application built to provide users with an intuitive interface to explore and filter through a wide range of cryptocurrencies. With the ability to search and apply multiple filters, users can easily discover coins that match their criteria. The app is designed with modern UI principles and optimized performance, making it suitable for crypto enthusiasts and professionals.
 
 ## Features
 
@@ -37,7 +37,7 @@ The CryptoFinder app aims to simplify how users consume news by aggregating arti
      - Filter by `is_new`.
 
 3. **Search Functionality**:
-   - Search for coins by `name` or `symbol`.
+   - User can search for coins by `name` or `symbol`.
 
 ## Screenshots
 
@@ -234,7 +234,7 @@ We would like to acknowledge the following resources and contributors that have 
 
 - **Clean Architecture**: Thank you to [Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) for providing a comprehensive and reliable framework for building scalable and maintainable software.
 - **UIKit**: Special thanks to [UIKit](https://developer.apple.com/documentation/uikit/) for building user interfaces on iOS. UIKit has been instrumental in creating beautiful and responsive user interfaces for this project.
-- **Swift**: Thank you to [Swift](https://www.swift.org/documentation/), Apple’s powerful and intuitive programming language.. Swift has been the backbone of this project, providing both performance and safety for writing high-quality code.
+- **Swift**: Thank you to [Swift](https://www.swift.org/documentation/), Apple’s powerful and intuitive programming language. Swift has been the backbone of this project, providing both performance and safety for writing high-quality code.
 
 If you find this project useful, consider giving it a star on GitHub or contributing to its development!
 
