@@ -9,7 +9,6 @@ The **CryptoFinder App** is a UIKit-based Mobile application designed to create 
 - [Architecture](#architecture)
 - [Screenshots](#screenshots)
 - [Installation](#installation)
-- [API Integration](#api-integration)
 - [Usage](#usage)
 - [Contributing](#contributing)
 - [License](#license)
@@ -179,7 +178,7 @@ To use the CryptoFinder app, follow these steps:
 1. **Launch the App**: 
    Open the CryptoFinder app on your device or simulator. You will be greeted with the home screen displaying list of Crypto Coins.
 
-2. **Filter Coins by Status/Type **: 
+2. **Filter Coins by Status/Type**: 
    Tap on Filter option to apply multiple filters at once to narrow down the list of coins.
    - Filter by Active Status: Filter coins to show only active or inactive coins.
    - Filter by Coin Type: Filter coins based on their type (e.g., "Token", "Coin").
@@ -232,8 +231,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 We would like to acknowledge the following resources and contributors that have made this project possible:
 
-- **NewsAPI**: Thank you to [NewsAPI](https://newsapi.org/) for providing a comprehensive and reliable source of news articles.
-- **SwiftUI**: Special thanks to [SwiftUI](https://developer.apple.com/xcode/swiftui/) for the assistance in creating beautiful interfaces for this project and for providing resources that helped in developing the code.
+- **NewsAPI**: Thank you to [UIKit]([https://newsapi.org/](https://developer.apple.com/documentation/uikit/)) for providing a comprehensive and reliable source of news articles.
+- **UIKit**: Special thanks to [UIKit](https://developer.apple.com/documentation/uikit/)) for the assistance in creating beautiful interfaces for this project and for providing resources that helped in developing the code.
 
 If you find this project useful, consider giving it a star on GitHub or contributing to its development!
 
