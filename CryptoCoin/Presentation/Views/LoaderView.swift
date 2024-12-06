@@ -31,7 +31,7 @@ class LoaderView: UIView {
         // Configure message label
         messageLabel.text = "Loading..."
         messageLabel.textColor = .white
-        messageLabel.font = UIFont.systemFont(ofSize: 16, weight: .medium)
+        messageLabel.font = UIFont.systemFont(ofSize: LayoutConstants.defaultFontSize, weight: .medium)
         messageLabel.textAlignment = .center
         messageLabel.translatesAutoresizingMaskIntoConstraints = false
         
@@ -39,7 +39,7 @@ class LoaderView: UIView {
         let stackView = UIStackView(arrangedSubviews: [logoImageView, messageLabel])
         stackView.axis = .vertical
         stackView.alignment = .center
-        stackView.spacing = 12
+        stackView.spacing = Spacing.smallVerticalSpacing
         stackView.translatesAutoresizingMaskIntoConstraints = false
         
         addSubview(stackView)

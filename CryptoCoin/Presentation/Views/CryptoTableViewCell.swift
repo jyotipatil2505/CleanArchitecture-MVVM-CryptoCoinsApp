@@ -27,11 +27,11 @@ class CryptoTableViewCell: UITableViewCell {
     // MARK: - UI Setup
     private func setupUI() {
         // Configure titleLabel
-        titleLabel.font = UIFont.systemFont(ofSize: 16, weight: .bold)
+        titleLabel.font = UIFont.systemFont(ofSize: LayoutConstants.defaultFontSize, weight: .bold)
         titleLabel.textColor = .black
         
         // Configure subtitleLabel
-        subtitleLabel.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+        subtitleLabel.font = UIFont.systemFont(ofSize: LayoutConstants.mediumFontSize, weight: .regular)
         subtitleLabel.textColor = .darkGray
         
         // Configure rightImageView
@@ -39,7 +39,7 @@ class CryptoTableViewCell: UITableViewCell {
         rightImageView.clipsToBounds = true
         
         // Configure newTagLabel (for "New" tag)
-        newTagLabel.font = UIFont.systemFont(ofSize: 8, weight: .bold)
+        newTagLabel.font = UIFont.systemFont(ofSize: LayoutConstants.samllFontSize, weight: .bold)
         newTagLabel.textColor = .white
         newTagLabel.backgroundColor = .systemGreen
         newTagLabel.textAlignment = .center
@@ -67,27 +67,27 @@ class CryptoTableViewCell: UITableViewCell {
         
         NSLayoutConstraint.activate([
             // Title Label Constraints
-            titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
-            titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
-            titleLabel.trailingAnchor.constraint(equalTo: newTagLabel.leadingAnchor, constant: -8),
+            titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: LayoutConstants.defaultMargin),
+            titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: LayoutConstants.smallMargin),
+            titleLabel.trailingAnchor.constraint(equalTo: newTagLabel.leadingAnchor, constant: -LayoutConstants.smallMargin),
             
             // Subtitle Label Constraints
-            subtitleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            subtitleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: LayoutConstants.defaultMargin),
             subtitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 4),
-            subtitleLabel.trailingAnchor.constraint(equalTo: rightImageView.leadingAnchor, constant: -8),
-            subtitleLabel.bottomAnchor.constraint(lessThanOrEqualTo: contentView.bottomAnchor, constant: -8),
+            subtitleLabel.trailingAnchor.constraint(equalTo: rightImageView.leadingAnchor, constant: -LayoutConstants.smallMargin),
+            subtitleLabel.bottomAnchor.constraint(lessThanOrEqualTo: contentView.bottomAnchor, constant: -LayoutConstants.smallMargin),
             
             // Right ImageView Constraints
-            rightImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
+            rightImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -LayoutConstants.defaultMargin),
             rightImageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
             rightImageView.widthAnchor.constraint(equalToConstant: 24),
             rightImageView.heightAnchor.constraint(equalToConstant: 24),
             
             // New Tag Label Constraints
-            newTagLabel.trailingAnchor.constraint(equalTo: rightImageView.leadingAnchor, constant: -8),
+            newTagLabel.trailingAnchor.constraint(equalTo: rightImageView.leadingAnchor, constant: -LayoutConstants.smallMargin),
             newTagLabel.centerYAnchor.constraint(equalTo: rightImageView.centerYAnchor), // This centers the label vertically
-            newTagLabel.widthAnchor.constraint(equalToConstant: 30),
-            newTagLabel.heightAnchor.constraint(equalToConstant: 15)
+            newTagLabel.widthAnchor.constraint(equalToConstant: 40),
+            newTagLabel.heightAnchor.constraint(equalToConstant: 20)
         ])
     }
     
@@ -97,6 +97,5 @@ class CryptoTableViewCell: UITableViewCell {
         subtitleLabel.text = subtitle
         rightImageView.image = image
         newTagLabel.isHidden = !isNew
-
     }
 }

@@ -5,6 +5,7 @@ class FilterView: UIView {
     private let applyButton = UIButton(type: .system)
     private let cancelButton = UIButton(type: .system)
     private var buttons: [UIButton] = []
+    let noOfOptionsInRow: Int = 3
     
     var selectedFilters: Set<FilterOption> = []
     
@@ -23,96 +24,103 @@ class FilterView: UIView {
     }
     
     private func setupUI() {
-        backgroundColor = .white
-        layer.cornerRadius = 16
-        clipsToBounds = true
+        
+        DispatchQueue.main.async {
+            self.backgroundColor = .white
+            self.layer.cornerRadius = LayoutConstants.defaultCornerRadius
+            self.clipsToBounds = true
 
-        // Create an array of button titles
-        let buttonTitles = [
-            "Active Coins", "Inactive Coins", "Only Coins",
-            "Only Tokens", "New Coins"
-        ]
+            // Create an array of button titles
+            let buttonTitles = [
+                "Active Coins", "Inactive Coins", "Only Coins",
+                "Only Tokens", "New Coins"
+            ]
 
-        // Create the buttons dynamically and add them to the array
-        for title in buttonTitles {
-            let button = UIButton(type: .system)
-            button.setTitle(title, for: .normal)
-            button.layer.cornerRadius = 15
-            button.layer.borderWidth = 1
-            button.layer.borderColor = UIColor.systemBlue.cgColor
-            button.heightAnchor.constraint(equalToConstant: 30).isActive = true
-            button.addTarget(self, action: #selector(toggleFilterSelection(_:)), for: .touchUpInside)
-            buttons.append(button)
-        }
-
-        // Style Apply and Cancel buttons
-        applyButton.setTitle("Apply", for: .normal)
-        applyButton.addTarget(self, action: #selector(applyFilters), for: .touchUpInside)
-        applyButton.layer.cornerRadius = 23
-        applyButton.backgroundColor = .systemBlue
-        applyButton.setTitleColor(.white, for: .normal)
-        applyButton.heightAnchor.constraint(equalToConstant: 46).isActive = true
-
-        cancelButton.setTitle("Cancel", for: .normal)
-        cancelButton.addTarget(self, action: #selector(cancelFilter), for: .touchUpInside)
-        cancelButton.layer.cornerRadius = 23
-        cancelButton.backgroundColor = .systemGray
-        cancelButton.setTitleColor(.white, for: .normal)
-        cancelButton.heightAnchor.constraint(equalToConstant: 46).isActive = true
-
-        // Main vertical stack view
-        let mainStackView = UIStackView()
-        mainStackView.axis = .vertical
-        mainStackView.spacing = 20
-        mainStackView.alignment = .fill
-        mainStackView.translatesAutoresizingMaskIntoConstraints = false
-
-        // Add buttons to horizontal stack views (3 per row)
-        var rowStackViews: [UIStackView] = []
-        var rowButtons: [UIButton] = []
-
-        for (index, button) in buttons.enumerated() {
-            rowButtons.append(button)
-
-            // If we have 3 buttons in a row, create a stack view for that row
-            if rowButtons.count == 3 || index == buttons.count - 1 {
-                let rowStackView = UIStackView(arrangedSubviews: rowButtons)
-                rowStackView.axis = .horizontal
-                rowStackView.spacing = 10
-                rowStackView.alignment = .center
-                rowStackView.distribution = .fillEqually
-                rowStackView.translatesAutoresizingMaskIntoConstraints = false
-                rowStackViews.append(rowStackView)
-                rowButtons = [] // Reset row buttons
+            // Create the buttons dynamically and add them to the array
+            for title in buttonTitles {
+                let buttonHeight = 30
+                let button = UIButton(type: .system)
+                button.setTitle(title, for: .normal)
+                button.heightAnchor.constraint(equalToConstant: CGFloat(buttonHeight)).isActive = true
+                button.layer.cornerRadius = CGFloat(buttonHeight/2)
+                button.layer.borderWidth = 1
+                button.layer.borderColor = UIColor.systemBlue.cgColor
+                button.addTarget(self, action: #selector(self.toggleFilterSelection(_:)), for: .touchUpInside)
+                button.titleLabel?.font = UIFont.systemFont(ofSize: LayoutConstants.samllFontSize) // Set font size to 18
+                self.buttons.append(button)
             }
+
+            // Style Apply and Cancel buttons
+            self.applyButton.setTitle("Apply", for: .normal)
+            self.applyButton.addTarget(self, action: #selector(self.applyFilters), for: .touchUpInside)
+            self.applyButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: LayoutConstants.defaultFontSize) // Set font size to 18
+            self.applyButton.layer.cornerRadius = LayoutConstants.buttonHeight / 2
+            self.applyButton.backgroundColor = .systemBlue
+            self.applyButton.setTitleColor(.white, for: .normal)
+            self.applyButton.heightAnchor.constraint(equalToConstant: LayoutConstants.buttonHeight).isActive = true
+
+            self.cancelButton.setTitle("Cancel", for: .normal)
+            self.cancelButton.addTarget(self, action: #selector(self.cancelFilter), for: .touchUpInside)
+            self.cancelButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: LayoutConstants.defaultFontSize) // Set font size to 18
+            self.cancelButton.layer.cornerRadius = LayoutConstants.buttonHeight / 2
+            self.cancelButton.backgroundColor = .systemGray
+            self.cancelButton.setTitleColor(.white, for: .normal)
+            self.cancelButton.heightAnchor.constraint(equalToConstant: LayoutConstants.buttonHeight).isActive = true
+
+            // Main vertical stack view
+            let mainStackView = UIStackView()
+            mainStackView.axis = .vertical
+            mainStackView.spacing = Spacing.defaultVerticalSpacing
+            mainStackView.alignment = .fill
+            mainStackView.translatesAutoresizingMaskIntoConstraints = false
+
+            // Add buttons to horizontal stack views (3 per row)
+            var rowStackViews: [UIStackView] = []
+            var rowButtons: [UIButton] = []
+
+            for (index, button) in self.buttons.enumerated() {
+                rowButtons.append(button)
+
+                // If we have 3 buttons in a row, create a stack view for that row
+                if rowButtons.count == self.noOfOptionsInRow || index == self.buttons.count - 1 {
+                    let rowStackView = UIStackView(arrangedSubviews: rowButtons)
+                    rowStackView.axis = .horizontal
+                    rowStackView.spacing = Spacing.smallHorizontalSpacing
+                    rowStackView.alignment = .center
+                    rowStackView.distribution = .fillEqually
+                    rowStackView.translatesAutoresizingMaskIntoConstraints = false
+                    rowStackViews.append(rowStackView)
+                    rowButtons = [] // Reset row buttons
+                }
+            }
+
+            // Add all row stack views to the main stack view
+            for rowStackView in rowStackViews {
+                mainStackView.addArrangedSubview(rowStackView)
+            }
+
+            // Create a horizontal stack view for Apply and Cancel buttons
+            let actionButtonStackView = UIStackView(arrangedSubviews: [self.cancelButton, self.applyButton])
+            actionButtonStackView.axis = .horizontal
+            actionButtonStackView.spacing = Spacing.smallHorizontalSpacing
+            actionButtonStackView.alignment = .fill
+            actionButtonStackView.distribution = .fillEqually
+            actionButtonStackView.translatesAutoresizingMaskIntoConstraints = false
+
+            // Add the action button stack view to the main stack view
+            mainStackView.addArrangedSubview(actionButtonStackView)
+
+            // Add the main stack view to the view
+            self.addSubview(mainStackView)
+
+            // Set constraints for the main stack view
+            NSLayoutConstraint.activate([
+                mainStackView.topAnchor.constraint(equalTo: self.topAnchor, constant: LayoutConstants.defaultMargin),
+                mainStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: LayoutConstants.defaultMargin),
+                mainStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -LayoutConstants.defaultMargin),
+                mainStackView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -LayoutConstants.largeMargin)
+            ])
         }
-
-        // Add all row stack views to the main stack view
-        for rowStackView in rowStackViews {
-            mainStackView.addArrangedSubview(rowStackView)
-        }
-
-        // Create a horizontal stack view for Apply and Cancel buttons
-        let actionButtonStackView = UIStackView(arrangedSubviews: [cancelButton, applyButton])
-        actionButtonStackView.axis = .horizontal
-        actionButtonStackView.spacing = 10
-        actionButtonStackView.alignment = .fill
-        actionButtonStackView.distribution = .fillEqually
-        actionButtonStackView.translatesAutoresizingMaskIntoConstraints = false
-
-        // Add the action button stack view to the main stack view
-        mainStackView.addArrangedSubview(actionButtonStackView)
-
-        // Add the main stack view to the view
-        addSubview(mainStackView)
-
-        // Set constraints for the main stack view
-        NSLayoutConstraint.activate([
-            mainStackView.topAnchor.constraint(equalTo: topAnchor, constant: 20),
-            mainStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            mainStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
-            mainStackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20)
-        ])
     }
     
     func updateButtonStates() {

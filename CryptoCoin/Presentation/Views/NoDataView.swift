@@ -19,7 +19,6 @@ class NoDataView: UIView {
         
         super.init(frame: frame)
         
-        // Configure the view
         setupUI()
     }
     
