@@ -1,6 +1,6 @@
-# NewsReader App
+# CryptoFinder App
 
-The **NewsReader App** is a SwiftUI-based mobile application designed to provide users with access to the latest news articles across various categories. Users can browse articles, read full content, bookmark their favorite articles, and filter news by categories, all within a clean and intuitive interface.
+The **CryptoFinder App** is a UIKit-based Mobile application designed to create a Crypto Coin List application that displays a list of cryptocurrency coins, allowing users to filter and search through the list using various options.
 
 ## Table of Contents
 
@@ -18,27 +18,34 @@ The **NewsReader App** is a SwiftUI-based mobile application designed to provide
 
 ## Overview
 
-The NewsReader app aims to simplify how users consume news by aggregating articles from multiple sources and presenting them in an easy-to-navigate format. The application includes essential features such as bookmarking articles for offline reading and filtering news by category to enhance user experience.
+The CryptoFinder app aims to simplify how users consume news by aggregating articles from multiple sources and presenting them in an easy-to-navigate format. The application includes essential features such as bookmarking articles for offline reading and filtering news by category to enhance user experience.
 
 ## Features
 
-- **Browse Latest News**: Access a wide range of articles organized by categories like Business, Technology, Sports, Health, and more.
-- **Read Full Articles**: Tap on any article to view its complete content.
-- **Bookmark Articles**: Easily bookmark articles for later reading.
-- **Category Filtering**: Filter news by categories to find articles that match your interests.
-- **User-Friendly Interface**: Enjoy a clean, intuitive design for an optimal reading experience.
-- **Offline Access**: Save articles for reading later, even without an internet connection.
+1. **Crypto Coin List**:
+   - Displays a comprehensive list of crypto coins.
+   - Each coin view includes:
+     - **Name**
+     - **Symbol**
+     - **Type**
+   - Disabled view for coins that are not active.
+
+2. **Filter Functionality**:
+   - Users can apply multiple filters simultaneously:
+     - Filter by `is_active`.
+     - Filter by `type`.
+     - Filter by `is_new`.
+
+3. **Search Functionality**:
+   - Search for coins by `name` or `symbol`.
 
 ## Screenshots
 
-#### Home Screen
+#### CryptoCoinList Screen
 <img src="https://github.com/jyotipatil2505/News-Reader-Swift-UI/blob/main/NewsApp/Screenshots/TopHeadlines.png" alt="Home Screen" width="240" />
 
-#### Article Detail Screen
+#### Filter CryptoCoins View
 <img src="https://github.com/jyotipatil2505/News-Reader-Swift-UI/blob/main/NewsApp/Screenshots/ArticleDetails.png" alt="Article Detail Screen" width="240" />
-
-#### Bookmarked Articles Screen
-<img src="https://github.com/jyotipatil2505/News-Reader-Swift-UI/blob/main/NewsApp/Screenshots/Bookmarks.png" alt="Bookmarked Screen" width="240" />
 
 
 ## Architecture
@@ -63,20 +70,20 @@ This project follows the **MVVM** (Model-View-ViewModel) architecture pattern, w
   │   ├── Bookmarks.png                                     # Displays the list of bookmarked articles, allowing users to easily access their saved content.
   │   ├── TopHeadlines.png                                  # Shows the screen displaying the top headlines, presenting an overview of the latest articles available in the news
   │   └── ArticleDetails.png                                # Illustrates the detailed view of an article, providing users with in-depth information and content related to the selected news item.
-  ├── Application/
-  │   ├── ViewModels                                        # Displays list of articles
-  │   │   ├── CryptoListViewModel.swift                     # Defines the `NewsRepositoryProtocol`, which outlines the methods for fetching articles and interacting with news data.
-  │   ├── ViewControllers                                   # Displays list of articles
-  │   │   ├── CoinListViewController+Extension.swift        # Defines the `NewsRepositoryProtocol`, which outlines the methods for fetching articles and interacting with news data.
-  │   │   ├── CoinListViewController.swift                  # Defines the `NewsRepositoryProtocol`, which outlines the methods for fetching articles and interacting with news data.
+  ├── Application/                                          # Core presentation layer of the application, handling UI logic and user interaction.
+  │   ├── ViewModels                                        # Contains logic to manage the UI data.
+  │   │   ├── CryptoListViewModel.swift                     # Manages the logic for fetching and preparing crypto coin data for display in the UI.
+  │   ├── ViewControllers                                   # Controls the views by connecting the UI to the underlying logic.
+  │   │   ├── CoinListViewController+Extension.swift        # Extensions for the CoinListViewController to handle TableView and Search related functionalities.
+  │   │   ├── CoinListViewController.swift                  # Primary view controller for displaying the list of crypto coins.
   │   ├── Views                                             # Displays list of articles
-  │   │   ├── FilterView.swift                              # Defines the `NewsRepositoryProtocol`, which outlines the methods for fetching articles and interacting with news data.
-  │   │   ├── LoaderView.swift                              # Defines the `NewsRepositoryProtocol`, which outlines the methods for fetching articles and interacting with news data.
-  │   │   ├── CryptoTableViewCell.swift                     # Defines the `NewsRepositoryProtocol`, which outlines the methods for fetching articles and interacting with news data.
-  │   │   ├── NoDataView.swift                              # Defines the `NewsRepositoryProtocol`, which outlines the methods for fetching articles and interacting with news data.
-  ├── Domain/
-  │   ├── UseCases                                          # Displays list of articles
-  │   │   ├── GetCryptoCoinsUseCase.swift                   # Defines the `NewsRepositoryProtocol`, which outlines the methods for fetching articles and interacting with news data.
+  │   │   ├── FilterView.swift                              # UI component to apply multiple filters to the crypto coin list.
+  │   │   ├── LoaderView.swift                              # Displays a loading animation while data is being fetched.
+  │   │   ├── CryptoTableViewCell.swift                     # Custom table cell to display coin details (name, symbol, type) with appropriate styles.
+  │   │   ├── NoDataView.swift                              # Displays a placeholder when there is no data to show.
+  ├── Domain/                                               # Contains business logic, which is independent of frameworks and UI.
+  │   ├── UseCases                                          # Encapsulates specific business logic.
+  │   │   ├── GetCryptoCoinsUseCase.swift                   # Handles the use case of fetching a list of crypto coins from data sources.
   │   ├── Repositories                                      # Displays list of articles
   │   │   ├── CryptoRepositoryProtocol.swift                # Defines the `NewsRepositoryProtocol`, which outlines the methods for fetching articles and interacting with news data.
   │   ├── Entities                                          # Displays list of articles
@@ -131,7 +138,7 @@ This project follows the **MVVM** (Model-View-ViewModel) architecture pattern, w
 
 ## Installation
 
-To set up the NewsReader App on your local machine, follow these steps:
+To set up the CryptoFinder App on your local machine, follow these steps:
 
 ### Prerequisites
 
@@ -143,24 +150,24 @@ To set up the NewsReader App on your local machine, follow these steps:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/jyotipatil2505/News-Reader-Swift-UI.git
+   git clone https://github.com/jyotipatil2505/CleanArchitecture-MVVM-CryptoCoinsApp.git
 
 2. Navigate into the project directory:
 
    ```bash
-   cd News-Reader-Swift-UI
+   cd CleanArchitecture-MVVM-CryptoCoinsApp
 
 3. Open the Xcode project:
 
    ```bash
-   open NewsApp.xcodeproj
+   open CryptoCoin.xcworkspace
 
 4. Run the app on a simulator or a physical device by pressing Cmd + R.
 
 
 ## API Integration
 
-The NewsReader app utilizes the [NewsAPI](https://newsapi.org/) to fetch articles. This integration allows the app to display real-time news updates across various categories.
+The CryptoFinder app utilizes the [NewsAPI](https://newsapi.org/) to fetch articles. This integration allows the app to display real-time news updates across various categories.
 
 ### Getting Started with NewsAPI
 
@@ -177,7 +184,7 @@ The NewsReader app utilizes the [NewsAPI](https://newsapi.org/) to fetch article
 
 ### Example API Request
 
-The NewsReader app makes use of the `NewsRepository` class to handle requests to the NewsAPI. 
+The CryptoFinder app makes use of the `NewsRepository` class to handle requests to the NewsAPI. 
 
 - Below is an example of how to fetch the top headlines and handle the response.:
 
@@ -195,7 +202,7 @@ The NewsReader app makes use of the `NewsRepository` class to handle requests to
 
 ### Fetching Articles by Category
 
-   To enhance user experience, the NewsReader app allows you to fetch articles filtered by specific categories. You can specify a category when calling the `fetchNews` method in the `NewsService`. 
+   To enhance user experience, the CryptoFinder app allows you to fetch articles filtered by specific categories. You can specify a category when calling the `fetchNews` method in the `NewsService`. 
 
 - Below is an example of how to request articles related to a specific category, such as Business::
 
@@ -214,7 +221,7 @@ The NewsReader app makes use of the `NewsRepository` class to handle requests to
 
 ### Supported Categories
 
-The NewsReader app provides users with the ability to filter articles based on various news categories. This feature helps users easily find news that aligns with their interests. Below are the supported categories:
+The CryptoFinder app provides users with the ability to filter articles based on various news categories. This feature helps users easily find news that aligns with their interests. Below are the supported categories:
 
 - **All**: Displays all available articles from different sources, providing a comprehensive view of current events.
 - **Business**: Articles related to business news, including market updates, financial news, and economic trends.
@@ -229,10 +236,10 @@ Users can select any of these categories to tailor their news feed according to 
 
 ## Usage
 
-To use the NewsReader app, follow these steps:
+To use the CryptoFinder app, follow these steps:
 
 1. **Launch the App**: 
-   Open the NewsReader app on your device or simulator. You will be greeted with the home screen displaying the latest articles.
+   Open the CryptoFinder app on your device or simulator. You will be greeted with the home screen displaying the latest articles.
 
 2. **View Articles**: 
    Tap on any article to read its full content. This will navigate you to a detailed view of the article where you can find additional information.
@@ -245,7 +252,7 @@ To use the NewsReader app, follow these steps:
 
 ## Contributing
 
-Contributions to the NewsReader app are welcome and encouraged! To contribute to the project, please follow these steps:
+Contributions to the CryptoFinder app are welcome and encouraged! To contribute to the project, please follow these steps:
 
 1. **Fork the Repository**: 
    Click the "Fork" button at the top right of the repository page to create your own copy of the project.
@@ -297,5 +304,5 @@ For inquiries or feedback, please reach out:
 - **Email**: [jyotipatil2505@gmail.com](mailto:jyotipatil2505@gmail.com)
 - **GitHub**: [jyotipatil2505](https://github.com/jyotipatil2505)
 
-Feel free to get in touch for any questions or suggestions regarding the NewsReader app!
+Feel free to get in touch for any questions or suggestions regarding the CryptoFinder app!
 
