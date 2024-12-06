@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5EB69B5CCF4B5A917CC60A2B /* Pods_CryptoCoin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3061F35D35A3234CA3EE841C /* Pods_CryptoCoin.framework */; };
+		D440661B2D02B47700432BB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4AED0222D00652F004E30BD /* Main.storyboard */; };
+		D440661C2D02B47B00432BB4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4AED0272D006530004E30BD /* LaunchScreen.storyboard */; };
 		D4AED01D2D00652F004E30BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4AED01C2D00652F004E30BD /* AppDelegate.swift */; };
 		D4AED01F2D00652F004E30BD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4AED01E2D00652F004E30BD /* SceneDelegate.swift */; };
 		D4AED0262D006530004E30BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4AED0252D006530004E30BD /* Assets.xcassets */; };
@@ -561,7 +563,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D440661B2D02B47700432BB4 /* Main.storyboard in Resources */,
 				D4AED0262D006530004E30BD /* Assets.xcassets in Resources */,
+				D440661C2D02B47B00432BB4 /* LaunchScreen.storyboard in Resources */,
 				D4AED0292D006530004E30BD /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
