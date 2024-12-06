@@ -42,10 +42,13 @@ The CryptoFinder app aims to simplify how users consume news by aggregating arti
 ## Screenshots
 
 #### CryptoCoinList Screen
-<img src="https://github.com/jyotipatil2505/News-Reader-Swift-UI/blob/main/NewsApp/Screenshots/TopHeadlines.png" alt="Home Screen" width="240" />
+<img src="https://github.com/jyotipatil2505/CleanArchitecture-MVVM-CryptoCoinsApp/blob/main/CryptoCoin/Screenshots/CryptoCoinListScreen.png" alt="Home Screen" width="240" />
 
 #### Filter CryptoCoins View
-<img src="https://github.com/jyotipatil2505/News-Reader-Swift-UI/blob/main/NewsApp/Screenshots/ArticleDetails.png" alt="Article Detail Screen" width="240" />
+<img src="https://github.com/jyotipatil2505/CleanArchitecture-MVVM-CryptoCoinsApp/blob/main/CryptoCoin/Screenshots/FilterView.png" alt="Article Detail Screen" width="240" />
+
+#### Searched CryptoCoinList Screen
+<img src="https://github.com/jyotipatil2505/CleanArchitecture-MVVM-CryptoCoinsApp/blob/main/CryptoCoin/Screenshots/SearchedCryptoCoinList.png" alt="Article Detail Screen" width="240" />
 
 
 ## Architecture
