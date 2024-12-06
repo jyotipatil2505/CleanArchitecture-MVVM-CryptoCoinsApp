@@ -18,8 +18,6 @@ class CryptoRepository: CryptoRepositoryProtocol {
     }
     
     func getCryptoCoinsFromNetwork() async throws -> [CryptoCoinModel] {
-        print("getCryptoCoinsFromNetwork called")
-
         // Fallback to network if local data is unavailable
         let networkCoins = try await networkDataSource.fetchCryptoCoins()
         try await localDataSource.saveCryptoCoins(networkCoins) // Cache the data
@@ -27,7 +25,6 @@ class CryptoRepository: CryptoRepositoryProtocol {
     }
     
     func getCryptoCoinsFromLocal() async throws -> [CryptoCoinModel] {
-        print("getCryptoCoinsFromLocal")
         // Try local storage first
         let localCoins = try await localDataSource.fetchCryptoCoins()
         return localCoins

@@ -39,6 +39,7 @@ class CryptoListViewModel {
                 self.reloadTableView?()
             } catch {
                 // Handle any error that occurs during fetching
+                self.reloadTableView?()
                 self.handleError?("Error", error.localizedDescription)
             }
             

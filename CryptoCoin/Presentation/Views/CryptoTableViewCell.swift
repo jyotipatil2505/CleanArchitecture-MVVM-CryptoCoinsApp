@@ -47,7 +47,7 @@ class CryptoTableViewCell: UITableViewCell {
         newTagLabel.layer.masksToBounds = true
         newTagLabel.isHidden = true // Initially hidden
         
-        newTagLabel.transform = CGAffineTransform(rotationAngle: CGFloat.pi / 4) // Rotate by -45 degrees
+//        newTagLabel.transform = CGAffineTransform(rotationAngle: CGFloat.pi / 4) // Rotate by -45 degrees
 
         // Add subviews
         contentView.addSubview(titleLabel)
@@ -69,7 +69,7 @@ class CryptoTableViewCell: UITableViewCell {
             // Title Label Constraints
             titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
             titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
-            titleLabel.trailingAnchor.constraint(equalTo: rightImageView.leadingAnchor, constant: -8),
+            titleLabel.trailingAnchor.constraint(equalTo: newTagLabel.leadingAnchor, constant: -8),
             
             // Subtitle Label Constraints
             subtitleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
@@ -84,8 +84,8 @@ class CryptoTableViewCell: UITableViewCell {
             rightImageView.heightAnchor.constraint(equalToConstant: 24),
             
             // New Tag Label Constraints
-            newTagLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -0),
-            newTagLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 0),
+            newTagLabel.trailingAnchor.constraint(equalTo: rightImageView.leadingAnchor, constant: -8),
+            newTagLabel.centerYAnchor.constraint(equalTo: rightImageView.centerYAnchor), // This centers the label vertically
             newTagLabel.widthAnchor.constraint(equalToConstant: 30),
             newTagLabel.heightAnchor.constraint(equalToConstant: 15)
         ])

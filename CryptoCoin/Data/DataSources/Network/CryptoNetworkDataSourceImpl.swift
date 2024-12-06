@@ -15,7 +15,6 @@ class CryptoNetworkDataSourceImpl: CryptoNetworkDataSource {
     }
 
     func fetchCryptoCoins() async throws -> [CryptoCoinModel] {
-        print("fetchCryptoCoins called")
         return try await apiService.fetchCryptoCoins()
     }
 }
