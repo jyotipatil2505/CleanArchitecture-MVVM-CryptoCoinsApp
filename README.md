@@ -21,7 +21,7 @@ The CryptoFinder app aims to simplify how users consume news by aggregating arti
 
 ## Features
 
-1. **Crypto Coin List**:
+1. **Crypto Coins List**:
    - Displays a comprehensive list of crypto coins.
    - Each coin view includes:
      - **Name**
@@ -40,13 +40,13 @@ The CryptoFinder app aims to simplify how users consume news by aggregating arti
 
 ## Screenshots
 
-#### CryptoCoinList Screen
+#### CryptoCoinsList Screen
 <img src="https://github.com/jyotipatil2505/CleanArchitecture-MVVM-CryptoCoinsApp/blob/main/CryptoCoin/Screenshots/CryptoCoinListScreen.png" alt="Home Screen" width="240" />
 
-#### Filter View
+#### Filter Coins by Status/Type View
 <img src="https://github.com/jyotipatil2505/CleanArchitecture-MVVM-CryptoCoinsApp/blob/main/CryptoCoin/Screenshots/FilterView.png" alt="Article Detail Screen" width="240" />
 
-#### Searched CryptoCoinList Screen
+#### Search for a Coin Screen
 <img src="https://github.com/jyotipatil2505/CleanArchitecture-MVVM-CryptoCoinsApp/blob/main/CryptoCoin/Screenshots/SearchedCryptoCoinList.png" alt="Article Detail Screen" width="240" />
 
 
