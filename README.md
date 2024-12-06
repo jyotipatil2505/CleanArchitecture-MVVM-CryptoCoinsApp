@@ -79,53 +79,53 @@ This project follows the **MVVM** (Model-View-ViewModel) architecture pattern, w
   │   │   ├── GetCryptoCoinsUseCase.swift                   # Defines the `NewsRepositoryProtocol`, which outlines the methods for fetching articles and interacting with news data.
   │   ├── Repositories                                      # Displays list of articles
   │   │   ├── CryptoRepositoryProtocol.swift                # Defines the `NewsRepositoryProtocol`, which outlines the methods for fetching articles and interacting with news data.
-  │   ├── Entities                         # Displays list of articles
-  │   │   ├── CryptoCoinModel.swift  # Defines the `NewsRepositoryProtocol`, which outlines the methods for fetching articles and interacting with news data.
+  │   ├── Entities                                          # Displays list of articles
+  │   │   ├── CryptoCoinModel.swift                         # Defines the `NewsRepositoryProtocol`, which outlines the methods for fetching articles and interacting with news data.
   ├── Data/
-  │   ├── DataSources                         # Displays list of articles
-  │   │   ├── Local  # Defines the `NewsRepositoryProtocol`, which outlines the methods for fetching articles and interacting with news data.
-  │   │   │   ├── Mappers  # Defines the `NewsRepositoryProtocol`, which outlines the methods for fetching articles and interacting with news data.
-  │   │   │   │   ├── CryptoCoinModel+RealmMapper.swift  # Defines the `NewsRepositoryProtocol`, which outlines the methods for fetching articles and interacting with news data.
-  │   │   │   │   ├── CryptoCoinRealm+DomainMapper.swift  # Defines the `NewsRepositoryProtocol`, which outlines the methods for fetching articles and interacting with news data.
-  │   │   │   ├── Models  # Defines the `NewsRepositoryProtocol`, which outlines the methods for fetching articles and interacting with news data.
-  │   │   │   ├── CryptoLocalDataSource.swift  # Defines the `NewsRepositoryProtocol`, which outlines the methods for fetching articles and interacting with news data.
-  │   │   │   ├── CryptoLocalDataSourceImpl.swift  # Defines the `NewsRepositoryProtocol`, which outlines the methods for fetching articles and interacting with news data.
-  │   │   │   ├── LocalStorageError.swift  # Defines the `NewsRepositoryProtocol`, which outlines the methods for fetching articles and interacting with news data.
-  │   │   ├── Network  # Defines the `NewsRepositoryProtocol`, which outlines the methods for fetching articles and interacting with news data.
-  │   │   │   ├── CryptoNetworkDataSource.swift  # Defines the `NewsRepositoryProtocol`, which outlines the methods for fetching articles and interacting with news data.
-  │   │   │   ├── CryptoNetworkDataSourceImpl.swift  # Defines the `NewsRepositoryProtocol`, which outlines the methods for fetching articles and interacting with news data.
-  │   ├── Repositories                         # Displays list of articles
-  │   │   ├── CryptoRepository.swift  # Defines the `NewsRepositoryProtocol`, which outlines the methods for fetching articles and interacting with news data.
+  │   ├── DataSources                                       # Displays list of articles
+  │   │   ├── Local                                         # Defines the `NewsRepositoryProtocol`, which outlines the methods for fetching articles and interacting with news data.
+  │   │   │   ├── Mappers                                   # Defines the `NewsRepositoryProtocol`, which outlines the methods for fetching articles and interacting with news data.
+  │   │   │   │   ├── CryptoCoinModel+RealmMapper.swift     # Defines the `NewsRepositoryProtocol`, which outlines the methods for fetching articles and interacting with news data.
+  │   │   │   │   ├── CryptoCoinRealm+DomainMapper.swift    # Defines the `NewsRepositoryProtocol`, which outlines the methods for fetching articles and interacting with news data.
+  │   │   │   ├── Models                                    # Defines the `NewsRepositoryProtocol`, which outlines the methods for fetching articles and interacting with news data.
+  │   │   │   ├── CryptoLocalDataSource.swift               # Defines the `NewsRepositoryProtocol`, which outlines the methods for fetching articles and interacting with news data.
+  │   │   │   ├── CryptoLocalDataSourceImpl.swift           # Defines the `NewsRepositoryProtocol`, which outlines the methods for fetching articles and interacting with news data.
+  │   │   │   ├── LocalStorageError.swift                   # Defines the `NewsRepositoryProtocol`, which outlines the methods for fetching articles and interacting with news data.
+  │   │   ├── Network                                       # Defines the `NewsRepositoryProtocol`, which outlines the methods for fetching articles and interacting with news data.
+  │   │   │   ├── CryptoNetworkDataSource.swift             # Defines the `NewsRepositoryProtocol`, which outlines the methods for fetching articles and interacting with news data.
+  │   │   │   ├── CryptoNetworkDataSourceImpl.swift         # Defines the `NewsRepositoryProtocol`, which outlines the methods for fetching articles and interacting with news data.
+  │   ├── Repositories                                      # Displays list of articles
+  │   │   ├── CryptoRepository.swift                        # Defines the `NewsRepositoryProtocol`, which outlines the methods for fetching articles and interacting with news data.
   ├── Core/
-  │   ├── Constants.swift                         # Displays list of articles
-  │   ├── Extensions.swift                         # Displays list of articles
-  │   ├── Helpers.swift                         # Displays list of articles
-  │   ├── Reachability.swift                         # Displays list of articles
-  ├── Infrastructure/
-  │   ├── Network                         # Displays list of articles
-  │   │   ├── Protocols  # Defines the `NewsRepositoryProtocol`, which outlines the methods for fetching articles and interacting with news data.
-  │   │   │   ├── APIServiceProtocol.swift  # Defines the `NewsRepositoryProtocol`, which outlines the methods for fetching articles and interacting with news data.
-  │   │   │   APIConfig.swift  # Defines the `NewsRepositoryProtocol`, which outlines the methods for fetching articles and interacting with news data.
-  │   │   │   APIManager.swift  # Defines the `NewsRepositoryProtocol`, which outlines the methods for fetching articles and interacting with news data.
-  │   │   │   Endpoints.swift  # Defines the `NewsRepositoryProtocol`, which outlines the methods for fetching articles and interacting with news data.
-  │   │   │   HTTPMethod.swift  # Defines the `NewsRepositoryProtocol`, which outlines the methods for fetching articles and interacting with news data.
-  │   │   │   NetworkError.swift  # Defines the `NewsRepositoryProtocol`, which outlines the methods for fetching articles and interacting with news data.
-  │   │   │   APIService.swift  # Defines the `NewsRepositoryProtocol`, which outlines the methods for fetching articles and interacting with news data.
+  │   ├── Constants.swift                                   # Displays list of articles
+  │   ├── Extensions.swift                                  # Displays list of articles
+  │   ├── Helpers.swift                                     # Displays list of articles
+  │   ├── Reachability.swift                                # Displays list of articles
+  ├── Infrastructure/                                       # Displays list of articles
+  │   ├── Network                                           # Displays list of articles
+  │   │   ├── Protocols                                     # Defines the `NewsRepositoryProtocol`, which outlines the methods for fetching articles and interacting with news data.
+  │   │   │   ├── APIServiceProtocol.swift                  # Defines the `NewsRepositoryProtocol`, which outlines the methods for fetching articles and interacting with news data.
+  │   │   │   APIConfig.swift                               # Defines the `NewsRepositoryProtocol`, which outlines the methods for fetching articles and interacting with news data.
+  │   │   │   APIManager.swift                              # Defines the `NewsRepositoryProtocol`, which outlines the methods for fetching articles and interacting with news data.
+  │   │   │   Endpoints.swift                               # Defines the `NewsRepositoryProtocol`, which outlines the methods for fetching articles and interacting with news data.
+  │   │   │   HTTPMethod.swift                              # Defines the `NewsRepositoryProtocol`, which outlines the methods for fetching articles and interacting with news data.
+  │   │   │   NetworkError.swift                            # Defines the `NewsRepositoryProtocol`, which outlines the methods for fetching articles and interacting with news data.
+  │   │   │   APIService.swift                              # Defines the `NewsRepositoryProtocol`, which outlines the methods for fetching articles and interacting with news data.
   |── Resources/
-  │   ├── Main.storyboard                     # Article model
-  │   ├── Assets.xcassets                     # Article model
-  │   ├── LaunchScreen.storyboard                     # Article model
-  │   ├── Info.plist                     # Article model
+  │   ├── Main.storyboard                                   # Article model
+  │   ├── Assets.xcassets                                   # Article model
+  │   ├── LaunchScreen.storyboard                           # Article model
+  │   ├── Info.plist                                        # Article model
   ├── CryptoCoinTests/
-  │   ├── Domain                         # Displays list of articles
-  │   │   ├── GetCryptoCoinsUseCaseTests.swift  # Defines the `NewsRepositoryProtocol`, which outlines the methods for fetching articles and interacting with news data.
-  │   ├── Presentation                         # Displays list of articles
-  │   │   ├── CryptoListViewModelTests.swift  # Defines the `NewsRepositoryProtocol`, which outlines the methods for fetching articles and interacting with news data.
-  │   ├── Mocks                         # Displays list of articles
-  │   │   ├── MockGetCryptoCoinsUseCase.swift  # Defines the `NewsRepositoryProtocol`, which outlines the methods for fetching articles and interacting with news data.
-  │   │   ├── MockCryptoRepository.swift  # Defines the `NewsRepositoryProtocol`, which outlines the methods for fetching articles and interacting with news data.
-  ├── CryptoCoin.xcworkspace               # Xcode project
-  ├── README.md                             # Project documentation
+  │   ├── Domain                                            # Displays list of articles
+  │   │   ├── GetCryptoCoinsUseCaseTests.swift              # Defines the `NewsRepositoryProtocol`, which outlines the methods for fetching articles and interacting with news data.
+  │   ├── Presentation                                      # Displays list of articles
+  │   │   ├── CryptoListViewModelTests.swift                # Defines the `NewsRepositoryProtocol`, which outlines the methods for fetching articles and interacting with news data.
+  │   ├── Mocks                                             # Displays list of articles
+  │   │   ├── MockGetCryptoCoinsUseCase.swift               # Defines the `NewsRepositoryProtocol`, which outlines the methods for fetching articles and interacting with news data.
+  │   │   ├── MockCryptoRepository.swift                    # Defines the `NewsRepositoryProtocol`, which outlines the methods for fetching articles and interacting with news data.
+  ├── CryptoCoin.xcworkspace                                # Xcode project
+  ├── README.md                                             # Project documentation
 
   
 
