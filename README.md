@@ -111,7 +111,8 @@ This project follows the **Clean Architecture - Model-View-ViewModel** architect
   │   ├── Repositories                                      # Concrete implementations of data repositories.
   │   │   ├── CryptoRepository.swift                        # Implements methods to fetch and manage crypto coin data from local or network sources.
   ├── Core/                                                 # Contains shared resources and utility classes.
-  │   ├── Constants.swift                                   # Stores app-wide constants like FilterOptions, Colors etc.
+  │   ├── Localization.swift                                # Handles App wide localization.
+  │   ├── Constants.swift                                   # Stores app-wide constants like FilterOptions, Layout constants, spacing etc.
   │   ├── Extensions.swift                                  # Adds extensions to existing classes for added functionality.
   │   ├── Helpers.swift                                     # Utility functions to simplify common tasks.
   │   ├── Reachability.swift                                # Handles network connectivity checks.
@@ -126,6 +127,8 @@ This project follows the **Clean Architecture - Model-View-ViewModel** architect
   │   │   │   NetworkError.swift                            # Defines network-related errors.
   │   │   │   APIService.swift                              # Implements network service operations.
   |── Resources/
+  │   ├── Locale                                            
+  │   │   ├── Localizable.strings                           # Handles localization and internationalization for the app
   │   ├── Main.storyboard                                   # Primary storyboard for the application UI.
   │   ├── Assets.xcassets                                   # Images and icons used in the app.
   │   ├── LaunchScreen.storyboard                           # Splash screen shown at app launch.
