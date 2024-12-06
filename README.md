@@ -134,13 +134,13 @@ This project follows the **Clean Architecture - Model-View-ViewModel** architect
   │   ├── LaunchScreen.storyboard                           # Splash screen shown at app launch.
   │   ├── Info.plist                                        # Configuration file for app metadata.
   ├── CryptoCoinTests/
-  │   ├── Domain                                            # Domain Layer for Unit Test Cases
-  │   │   ├── GetCryptoCoinsUseCaseTests.swift              # Tests for GetCryptoCoinsUseCase
-  │   ├── Presentation                                      # Presentation Layer for Unit Test Cases
-  │   │   ├── CryptoListViewModelTests.swift                # Tests for CryptoListViewModel.
+  │   ├── Domain                                            # Contains test cases related to the domain layer of the application
+  │   │   ├── GetCryptoCoinsUseCaseTests.swift              # Contains unit tests for the GetCryptoCoinsUseCase class
+  │   ├── Presentation                                      # Includes test cases for the presentation layer of the application
+  │   │   ├── CryptoListViewModelTests.swift                # Contains unit tests for the CryptoListViewModel
   │   ├── Mocks                                             # Mock Layer For Unit Test Cases
-  │   │   ├── MockGetCryptoCoinsUseCase.swift               # Mock implementation of the use case for testing.
-  │   │   ├── MockCryptoRepository.swift                    # Mock repository for testing data operations.
+  │   │   ├── MockGetCryptoCoinsUseCase.swift               # Provides a mock implementation of the GetCryptoCoinsUseCase for testing purposes.
+  │   │   ├── MockCryptoRepository.swift                    # Contains a mock repository for testing data operations.
   ├── CryptoCoin.xcworkspace                                # Xcode project
   ├── README.md                                             # Project documentation
 
