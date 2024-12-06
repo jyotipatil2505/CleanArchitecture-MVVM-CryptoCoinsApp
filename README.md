@@ -18,7 +18,7 @@ The **CryptoFinder App** is a sleek and intuitive UIKit-based mobile application
 
 ## Overview
 
-The CryptoFinder app aims to simplify how users consume news by aggregating articles from multiple sources and presenting them in an easy-to-navigate format. The application includes essential features such as bookmarking articles for offline reading and filtering news by category to enhance user experience.
+The CryptoFinder App is a user-friendly cryptocurrency coin listing application built to provide users with an intuitive interface to explore and filter through a wide range of cryptocurrencies. With the ability to search and apply multiple filters, users can easily discover coins that match their criteria. The app is designed with modern UI principles and optimized performance, making it suitable for crypto enthusiasts and professionals.
 
 ## Features
 
