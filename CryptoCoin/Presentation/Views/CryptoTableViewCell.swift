@@ -68,14 +68,14 @@ class CryptoTableViewCell: UITableViewCell {
         NSLayoutConstraint.activate([
             // Title Label Constraints
             titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: LayoutConstants.defaultMargin),
-            titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: LayoutConstants.smallMargin),
-            titleLabel.trailingAnchor.constraint(equalTo: newTagLabel.leadingAnchor, constant: -LayoutConstants.smallMargin),
+            titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: LayoutConstants.mediumMargin),
+            titleLabel.trailingAnchor.constraint(equalTo: newTagLabel.leadingAnchor, constant: -LayoutConstants.mediumMargin),
             
             // Subtitle Label Constraints
             subtitleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: LayoutConstants.defaultMargin),
-            subtitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 4),
-            subtitleLabel.trailingAnchor.constraint(equalTo: rightImageView.leadingAnchor, constant: -LayoutConstants.smallMargin),
-            subtitleLabel.bottomAnchor.constraint(lessThanOrEqualTo: contentView.bottomAnchor, constant: -LayoutConstants.smallMargin),
+            subtitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: LayoutConstants.smallMargin),
+            subtitleLabel.trailingAnchor.constraint(equalTo: rightImageView.leadingAnchor, constant: -LayoutConstants.mediumMargin),
+            subtitleLabel.bottomAnchor.constraint(lessThanOrEqualTo: contentView.bottomAnchor, constant: -LayoutConstants.mediumMargin),
             
             // Right ImageView Constraints
             rightImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -LayoutConstants.defaultMargin),
@@ -84,7 +84,7 @@ class CryptoTableViewCell: UITableViewCell {
             rightImageView.heightAnchor.constraint(equalToConstant: 24),
             
             // New Tag Label Constraints
-            newTagLabel.trailingAnchor.constraint(equalTo: rightImageView.leadingAnchor, constant: -LayoutConstants.smallMargin),
+            newTagLabel.trailingAnchor.constraint(equalTo: rightImageView.leadingAnchor, constant: -LayoutConstants.mediumMargin),
             newTagLabel.centerYAnchor.constraint(equalTo: rightImageView.centerYAnchor), // This centers the label vertically
             newTagLabel.widthAnchor.constraint(equalToConstant: 40),
             newTagLabel.heightAnchor.constraint(equalToConstant: 20)

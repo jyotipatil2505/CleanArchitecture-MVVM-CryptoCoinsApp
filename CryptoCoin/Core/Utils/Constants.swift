@@ -19,7 +19,8 @@ enum FilterOption: String {
 struct LayoutConstants {
     // Spacing constants (for padding or margins)
     static let defaultMargin: CGFloat = 16.0
-    static let smallMargin: CGFloat = 8.0
+    static let smallMargin: CGFloat = 4.0
+    static let mediumMargin: CGFloat = 8.0
     static let largeMargin: CGFloat = 24.0
     
     // Padding

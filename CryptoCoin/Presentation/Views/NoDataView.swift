@@ -31,7 +31,7 @@ class NoDataView: UIView {
         messageLabel.text = "No data available"
         messageLabel.textColor = .gray
         messageLabel.textAlignment = .center
-        messageLabel.font = UIFont.systemFont(ofSize: 18, weight: .medium)
+        messageLabel.font = UIFont.systemFont(ofSize: LayoutConstants.largeFontSize, weight: .medium)
         
         // Setup the icon
         iconImageView.tintColor = .gray
@@ -40,7 +40,7 @@ class NoDataView: UIView {
         // Stack the icon and label vertically
         let stackView = UIStackView(arrangedSubviews: [iconImageView, messageLabel])
         stackView.axis = .vertical
-        stackView.spacing = 8
+        stackView.spacing = Spacing.smallVerticalSpacing
         stackView.alignment = .center
         stackView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -51,8 +51,8 @@ class NoDataView: UIView {
         NSLayoutConstraint.activate([
             stackView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             stackView.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-            stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
-            stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16)
+            stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: LayoutConstants.defaultMargin),
+            stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -LayoutConstants.defaultMargin)
         ])
     }
 }
