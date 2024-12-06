@@ -42,13 +42,13 @@ The CryptoFinder App is a user-friendly cryptocurrency coin listing application 
 ## Screenshots
 
 #### CryptoCoinsList Screen
-<img src="https://github.com/jyotipatil2505/CleanArchitecture-MVVM-CryptoCoinsApp/blob/main/CryptoCoin/Screenshots/CryptoCoinListScreen.png" alt="Home Screen" width="240" />
+<img src="https://github.com/jyotipatil2505/CleanArchitecture-MVVM-CryptoCoinsApp/blob/main/CryptoCoin/Screenshots/CryptoCoinListScreen.png" alt="CryptoCoinsList Screen" width="240" />
 
 #### Filter Coins by Status/Type View
-<img src="https://github.com/jyotipatil2505/CleanArchitecture-MVVM-CryptoCoinsApp/blob/main/CryptoCoin/Screenshots/FilterView.png" alt="Article Detail Screen" width="240" />
+<img src="https://github.com/jyotipatil2505/CleanArchitecture-MVVM-CryptoCoinsApp/blob/main/CryptoCoin/Screenshots/FilterView.png" alt="Filter Coins by Status/Type View" width="240" />
 
 #### Search for a Coin Screen
-<img src="https://github.com/jyotipatil2505/CleanArchitecture-MVVM-CryptoCoinsApp/blob/main/CryptoCoin/Screenshots/SearchedCryptoCoinList.png" alt="Article Detail Screen" width="240" />
+<img src="https://github.com/jyotipatil2505/CleanArchitecture-MVVM-CryptoCoinsApp/blob/main/CryptoCoin/Screenshots/SearchedCryptoCoinList.png" alt="Search for a Coin Screen" width="240" />
 
 
 ## Architecture
