@@ -101,36 +101,36 @@ This project follows the **MVVM** (Model-View-ViewModel) architecture pattern, w
   │   │   ├── Network                                       # Handles fetching data from remote sources.
   │   │   │   ├── CryptoNetworkDataSource.swift             # Protocol for network operations.
   │   │   │   ├── CryptoNetworkDataSourceImpl.swift         # Implementation of network operations.
-  │   ├── Repositories                                      # Displays list of articles
-  │   │   ├── CryptoRepository.swift                        # Defines the `NewsRepositoryProtocol`, which outlines the methods for fetching articles and interacting with news data.
-  ├── Core/
-  │   ├── Constants.swift                                   # Displays list of articles
-  │   ├── Extensions.swift                                  # Displays list of articles
-  │   ├── Helpers.swift                                     # Displays list of articles
-  │   ├── Reachability.swift                                # Displays list of articles
-  ├── Infrastructure/                                       # Displays list of articles
-  │   ├── Network                                           # Displays list of articles
-  │   │   ├── Protocols                                     # Defines the `NewsRepositoryProtocol`, which outlines the methods for fetching articles and interacting with news data.
-  │   │   │   ├── APIServiceProtocol.swift                  # Defines the `NewsRepositoryProtocol`, which outlines the methods for fetching articles and interacting with news data.
-  │   │   │   APIConfig.swift                               # Defines the `NewsRepositoryProtocol`, which outlines the methods for fetching articles and interacting with news data.
-  │   │   │   APIManager.swift                              # Defines the `NewsRepositoryProtocol`, which outlines the methods for fetching articles and interacting with news data.
-  │   │   │   Endpoints.swift                               # Defines the `NewsRepositoryProtocol`, which outlines the methods for fetching articles and interacting with news data.
-  │   │   │   HTTPMethod.swift                              # Defines the `NewsRepositoryProtocol`, which outlines the methods for fetching articles and interacting with news data.
-  │   │   │   NetworkError.swift                            # Defines the `NewsRepositoryProtocol`, which outlines the methods for fetching articles and interacting with news data.
-  │   │   │   APIService.swift                              # Defines the `NewsRepositoryProtocol`, which outlines the methods for fetching articles and interacting with news data.
+  │   ├── Repositories                                      # Concrete implementations of data repositories.
+  │   │   ├── CryptoRepository.swift                        # Implements methods to fetch and manage crypto coin data from local or network sources.
+  ├── Core/                                                 # Contains shared resources and utility classes.
+  │   ├── Constants.swift                                   # Stores app-wide constants like FilterOptions, Colors etc.
+  │   ├── Extensions.swift                                  # Adds extensions to existing classes for added functionality.
+  │   ├── Helpers.swift                                     # Utility functions to simplify common tasks.
+  │   ├── Reachability.swift                                # Handles network connectivity checks.
+  ├── Infrastructure/                                       
+  │   ├── Network                                           # Manages API calls and network configurations.
+  │   │   ├── Protocols                                     
+  │   │   │   ├── APIServiceProtocol.swift                  # Protocol for network service operations.
+  │   │   │   APIConfig.swift                               # Configuration for Base Url, Api Keys.
+  │   │   │   APIManager.swift                              # Manages network requests and responses.
+  │   │   │   Endpoints.swift                               # Defines API endpoints.
+  │   │   │   HTTPMethod.swift                              # Enum for HTTP request methods (GET, POST, etc.).
+  │   │   │   NetworkError.swift                            # Defines network-related errors.
+  │   │   │   APIService.swift                              # Implements network service operations.
   |── Resources/
-  │   ├── Main.storyboard                                   # Article model
-  │   ├── Assets.xcassets                                   # Article model
-  │   ├── LaunchScreen.storyboard                           # Article model
-  │   ├── Info.plist                                        # Article model
+  │   ├── Main.storyboard                                   # Primary storyboard for the application UI.
+  │   ├── Assets.xcassets                                   # Images and icons used in the app.
+  │   ├── LaunchScreen.storyboard                           # Splash screen shown at app launch.
+  │   ├── Info.plist                                        # Configuration file for app metadata.
   ├── CryptoCoinTests/
-  │   ├── Domain                                            # Displays list of articles
-  │   │   ├── GetCryptoCoinsUseCaseTests.swift              # Defines the `NewsRepositoryProtocol`, which outlines the methods for fetching articles and interacting with news data.
-  │   ├── Presentation                                      # Displays list of articles
-  │   │   ├── CryptoListViewModelTests.swift                # Defines the `NewsRepositoryProtocol`, which outlines the methods for fetching articles and interacting with news data.
-  │   ├── Mocks                                             # Displays list of articles
-  │   │   ├── MockGetCryptoCoinsUseCase.swift               # Defines the `NewsRepositoryProtocol`, which outlines the methods for fetching articles and interacting with news data.
-  │   │   ├── MockCryptoRepository.swift                    # Defines the `NewsRepositoryProtocol`, which outlines the methods for fetching articles and interacting with news data.
+  │   ├── Domain                                            # Domain Layer for Unit Test Cases
+  │   │   ├── GetCryptoCoinsUseCaseTests.swift              # Tests for GetCryptoCoinsUseCase
+  │   ├── Presentation                                      # Presentation Layer for Unit Test Cases
+  │   │   ├── CryptoListViewModelTests.swift                # Tests for CryptoListViewModel.
+  │   ├── Mocks                                             # Mock Layer For Unit Test Cases
+  │   │   ├── MockGetCryptoCoinsUseCase.swift               # Mock implementation of the use case for testing.
+  │   │   ├── MockCryptoRepository.swift                    # Mock repository for testing data operations.
   ├── CryptoCoin.xcworkspace                                # Xcode project
   ├── README.md                                             # Project documentation
 
