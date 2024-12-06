@@ -37,7 +37,7 @@ The CryptoFinder App is a user-friendly cryptocurrency coin listing application 
      - Filter by `is_new`.
 
 3. **Search Functionality**:
-   - Search for coins by `name` or `symbol`.
+   - User can search for coins by `name` or `symbol`.
 
 ## Screenshots
 
