@@ -176,16 +176,16 @@ To set up the CryptoFinder App on your local machine, follow these steps:
 To use the CryptoFinder app, follow these steps:
 
 1. **Launch the App**: 
-   Open the CryptoFinder app on your device or simulator. You will be greeted with the home screen displaying list of Crypto Coins.
+   Open the CryptoFinder app on your device or simulator. You will be greeted with the home screen displaying the list of Crypto Coins.
 
 2. **Filter Coins by Status/Type**: 
-   Tap on Filter option to apply multiple filters at once to narrow down the list of coins.
+   Tap on the filter option to apply multiple filters at once and narrow down the list of coins.
    - Filter by Active Status: Filter coins to show only active or inactive coins.
    - Filter by Coin Type: Filter coins based on their type (e.g., "Token", "Coin").
    - Filter by New Crypto: Show only new cryptocurrencies.
 
-3. **Search Coin**: 
-   Tap on the search bar to search for a specific coin by
+3. **Search for a Coin**: 
+   Tap on the search bar to search for a specific coin by:
    - Coin Name: Type the name of the coin (e.g., Bitcoin).
    - Coin Symbol: Type the symbol (e.g., BTC).
 
@@ -232,8 +232,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 We would like to acknowledge the following resources and contributors that have made this project possible:
 
 - **Clean Architecture**: Thank you to [Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) for providing a comprehensive and reliable framework for building scalable and maintainable software.
-- **UIKit**: Special thanks to [UIKit](https://developer.apple.com/documentation/uikit/) building user interfaces on iOS. UIKit has been instrumental in creating beautiful and responsive user interfaces for this project.
-- **Swift**: Thank you to [Swift](https://www.swift.org/documentation/) Apple’s powerful and intuitive programming language.. Swift has been the backbone of this project, providing both performance and safety for writing high-quality code.
+- **UIKit**: Special thanks to [UIKit](https://developer.apple.com/documentation/uikit/) for building user interfaces on iOS. UIKit has been instrumental in creating beautiful and responsive user interfaces for this project.
+- **Swift**: Thank you to [Swift](https://www.swift.org/documentation/), Apple’s powerful and intuitive programming language.. Swift has been the backbone of this project, providing both performance and safety for writing high-quality code.
 
 If you find this project useful, consider giving it a star on GitHub or contributing to its development!
 
