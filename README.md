@@ -44,7 +44,7 @@ The CryptoFinder app aims to simplify how users consume news by aggregating arti
 #### CryptoCoinList Screen
 <img src="https://github.com/jyotipatil2505/CleanArchitecture-MVVM-CryptoCoinsApp/blob/main/CryptoCoin/Screenshots/CryptoCoinListScreen.png" alt="Home Screen" width="240" />
 
-#### Filter CryptoCoins View
+#### Filter View
 <img src="https://github.com/jyotipatil2505/CleanArchitecture-MVVM-CryptoCoinsApp/blob/main/CryptoCoin/Screenshots/FilterView.png" alt="Article Detail Screen" width="240" />
 
 #### Searched CryptoCoinList Screen
@@ -53,13 +53,17 @@ The CryptoFinder app aims to simplify how users consume news by aggregating arti
 
 ## Architecture
 
-This project follows the **MVVM** (Model-View-ViewModel) architecture pattern, which helps keep the code modular, maintainable, and testable.
+This project follows the **Clean Architecture - Model-View-ViewModel** architecture pattern, which helps keep the code modular, maintainable, and testable.
 
-- **Model**: Represents the app data, such as `Article`. It defines the structure of the data and how it can be encoded/decoded.
+- **Presentation Layer**: Manages the user interface (UI) and handles user interactions.
   
-- **View**: SwiftUI views that display the data and handle user interactions. These are responsible for rendering the user interface and responding to user input.
+- **Domain Layer**: Contains the core business logic and is independent of any framework or technology.
   
-- **ViewModel**: Contains the business logic, communicates with the service layer, and provides data to the View. It acts as an intermediary between the Model and the View, managing the state and behavior of the UI.
+- **Data Layer**: Responsible for data management and access from various sources (network, local storage).
+
+- **Core Layer**: Contains reusable utilities and application-wide resources.
+
+- **Infrastructure Layer**: Provides foundational services like network communication and configuration.
 
 
 ## Folder Structure
