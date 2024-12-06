@@ -6,13 +6,13 @@ class FilterView: UIView {
     private let cancelButton = UIButton(type: .system)
     private var buttons: [UIButton] = []
     let noOfOptionsInRow: Int = 3
-    
     var selectedFilters: Set<FilterOption> = []
     
     // Closure to handle the apply action
     var onApplyFilters: ((Set<FilterOption>) -> Void)?
     var onCancelFilters: (() -> Void)?
 
+    //MARK: - Initialization Methods
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
@@ -23,8 +23,8 @@ class FilterView: UIView {
         setupUI()
     }
     
+    //MARK: - Setup UI Methods
     private func setupUI() {
-        
         DispatchQueue.main.async {
             self.backgroundColor = .white
             self.layer.cornerRadius = LayoutConstants.defaultCornerRadius
@@ -32,8 +32,8 @@ class FilterView: UIView {
 
             // Create an array of button titles
             let buttonTitles = [
-                "Active Coins", "Inactive Coins", "Only Coins",
-                "Only Tokens", "New Coins"
+                FilterOption.activeCoins.rawValue, FilterOption.inactiveCoins.rawValue, FilterOption.onlyCoins.rawValue,
+                FilterOption.onlyTokens.rawValue, FilterOption.newCoins.rawValue
             ]
 
             // Create the buttons dynamically and add them to the array
@@ -51,7 +51,7 @@ class FilterView: UIView {
             }
 
             // Style Apply and Cancel buttons
-            self.applyButton.setTitle("Apply", for: .normal)
+            self.applyButton.setTitle(Localization.localizedString(for: "apply",defaultValue: "Apply"), for: .normal)
             self.applyButton.addTarget(self, action: #selector(self.applyFilters), for: .touchUpInside)
             self.applyButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: LayoutConstants.defaultFontSize) // Set font size to 18
             self.applyButton.layer.cornerRadius = LayoutConstants.buttonHeight / 2
@@ -59,7 +59,7 @@ class FilterView: UIView {
             self.applyButton.setTitleColor(.white, for: .normal)
             self.applyButton.heightAnchor.constraint(equalToConstant: LayoutConstants.buttonHeight).isActive = true
 
-            self.cancelButton.setTitle("Cancel", for: .normal)
+            self.cancelButton.setTitle(Localization.localizedString(for: "cancel",defaultValue: "Cancel"), for: .normal)
             self.cancelButton.addTarget(self, action: #selector(self.cancelFilter), for: .touchUpInside)
             self.cancelButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: LayoutConstants.defaultFontSize) // Set font size to 18
             self.cancelButton.layer.cornerRadius = LayoutConstants.buttonHeight / 2
@@ -124,21 +124,22 @@ class FilterView: UIView {
     }
     
     func updateButtonStates() {
-        for button in buttons {
-            guard let title = button.title(for: .normal),
-                  let option = FilterOption(rawValue: title) else { continue }
-            
-            if selectedFilters.contains(option) {
-                button.backgroundColor = .systemBlue
-                button.setTitleColor(.white, for: .normal)
-            } else {
-                button.backgroundColor = .white
-                button.setTitleColor(.systemBlue, for: .normal)
+        DispatchQueue.main.async {
+            for button in self.buttons {
+                guard let title = button.title(for: .normal),
+                      let option = FilterOption(rawValue: title) else { continue }
+                if self.selectedFilters.contains(option) {
+                    button.backgroundColor = .systemBlue
+                    button.setTitleColor(.white, for: .normal)
+                } else {
+                    button.backgroundColor = .white
+                    button.setTitleColor(.systemBlue, for: .normal)
+                }
             }
         }
     }
 
-    
+    //MARK: - Private Methods
     @objc private func toggleFilterSelection(_ sender: UIButton) {
         guard let tagValue = sender.title(for: .normal), let option = FilterOption(rawValue: tagValue) else { return }
         sender.layer.borderColor = UIColor.systemBlue.cgColor // Change border color to green

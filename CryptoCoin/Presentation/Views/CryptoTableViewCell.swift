@@ -14,7 +14,7 @@ class CryptoTableViewCell: UITableViewCell {
     private let rightImageView = UIImageView()
     private let newTagLabel = UILabel()  // New Tag Label
     
-    // MARK: - Initialization
+    //MARK: - Initialization Methods
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupUI()
@@ -24,7 +24,7 @@ class CryptoTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: - UI Setup
+    // MARK: - UI Setup Methods
     private func setupUI() {
         // Configure titleLabel
         titleLabel.font = UIFont.systemFont(ofSize: LayoutConstants.defaultFontSize, weight: .bold)

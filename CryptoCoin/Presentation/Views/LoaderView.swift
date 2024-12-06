@@ -6,6 +6,7 @@ class LoaderView: UIView {
     private let messageLabel: UILabel
     private static var currentLoader: LoaderView?  // Track the current loader
     
+    //MARK: - Initialization Methods
     override init(frame: CGRect) {
         logoImageView = UIImageView(image: UIImage(named: "bitCoin")) // Replace with your app logo
         messageLabel = UILabel()
@@ -25,11 +26,11 @@ class LoaderView: UIView {
         // Configure logo
         logoImageView.contentMode = .scaleAspectFit
         logoImageView.translatesAutoresizingMaskIntoConstraints = false
-        logoImageView.heightAnchor.constraint(equalToConstant: 50).isActive = true // Adjust size
-        logoImageView.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        logoImageView.heightAnchor.constraint(equalToConstant: LayoutConstants.iconHeight).isActive = true // Adjust size
+        logoImageView.widthAnchor.constraint(equalToConstant: LayoutConstants.iconHeight).isActive = true
         
         // Configure message label
-        messageLabel.text = "Loading..."
+        messageLabel.text = Localization.localizedString(for: "loading",defaultValue: "Loading....")
         messageLabel.textColor = .white
         messageLabel.font = UIFont.systemFont(ofSize: LayoutConstants.defaultFontSize, weight: .medium)
         messageLabel.textAlignment = .center
@@ -52,15 +53,14 @@ class LoaderView: UIView {
         
     }
     
+    //MARK: - Private Methods
     private func stopLoader() {
         self.removeFromSuperview()
     }
     
     private func showLoader(in view: UIView) {
         view.addSubview(self)
-        
         self.translatesAutoresizingMaskIntoConstraints = false
-        
         NSLayoutConstraint.activate([
             self.topAnchor.constraint(equalTo: view.topAnchor),
             self.leadingAnchor.constraint(equalTo: view.leadingAnchor),

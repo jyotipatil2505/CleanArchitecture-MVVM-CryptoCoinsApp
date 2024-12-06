@@ -23,8 +23,11 @@ struct LayoutConstants {
     static let mediumMargin: CGFloat = 8.0
     static let largeMargin: CGFloat = 24.0
     
-    // Padding
+    // Button
     static let buttonHeight: CGFloat = 46.0
+    
+    //Icons
+    static let iconHeight: CGFloat = 40.0
     
     // Font sizes (if you want to define sizes for labels, buttons, etc.)
     static let largeFontSize: CGFloat = 20.0

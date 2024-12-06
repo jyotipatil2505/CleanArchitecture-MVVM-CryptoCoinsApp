@@ -1,0 +1,20 @@
+//
+//  Localizable.strings
+//  CryptoCoin
+//
+//  Created by Jyoti Patil on 06/12/24.
+//
+
+"active_coins" = "Active Coins";
+"inactive_coins" = "Inactive Coins";
+"only_tokens" = "Only Tokens";
+"only_coins" = "Only Coins";
+"new_coins" = "New Coins";
+"apply" = "Apply";
+"cancel" = "Cancel";
+"cancel" = "Cancel";
+"error" = "Error";
+"loading" = "Loading...";
+"coin" = "Coin";
+"search_crypto_coins" = "Search Crypto Coins";
+"no_crypto_coins_available" = "No crypto coins available at the moment.";

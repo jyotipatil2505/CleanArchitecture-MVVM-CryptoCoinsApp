@@ -7,6 +7,7 @@
 
 import UIKit
 
+//MARK: - CryptoListViewController UITableViewDelegate 
 extension CryptoListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -26,7 +27,7 @@ extension CryptoListViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-
+//MARK: - CryptoListViewController UISearchBarDelegate
 extension CryptoListViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         viewModel.searchCoins(query: searchText)

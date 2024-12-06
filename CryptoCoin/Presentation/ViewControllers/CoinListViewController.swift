@@ -17,13 +17,13 @@ class CryptoListViewController: UIViewController {
         setupNavigationBar()
     }
     
+    //MARK: - Private Methods
     private func initializeViewModel() {
         let apiService = APIService() // Assuming it's already implemented
         let networkDataSource = CryptoNetworkDataSourceImpl(apiService: apiService)
         let localDataSource = CryptoLocalDataSourceImpl()
         let repository = CryptoRepository(networkDataSource: networkDataSource, localDataSource: localDataSource)
         let useCase = GetCryptoCoinsUseCase(repository: repository)
-        
         viewModel = CryptoListViewModel(getCryptoCoinsUseCase: useCase)
     }
     
@@ -45,43 +45,42 @@ class CryptoListViewController: UIViewController {
         ])
     }
     
-    private func setupBlurEffect() {
-        guard blurEffectView == nil else { return }
-        let blurEffect = UIBlurEffect(style: .dark)
-        let blurEffectView = UIVisualEffectView(effect: blurEffect)
-        blurEffectView.frame = view.bounds
-        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        blurEffectView.alpha = 0
-        view.insertSubview(blurEffectView, belowSubview: self.view)
-        self.blurEffectView = blurEffectView
-    }
-    
-    private func showBlurEffect() {
-        setupBlurEffect()
-        UIView.animate(withDuration: 0.2) {
-            self.blurEffectView?.alpha = 1
+    private func setupBindings() {
+        viewModel.reloadTableView = { [weak self] in
+            DispatchQueue.main.async {
+                self?.tableView.reloadData()
+                self?.updateNoDataView()
+            }
         }
-    }
-    
-    private func hideBlurEffect() {
-        guard let blurEffectView = blurEffectView else { return }
-        UIView.animate(withDuration: 0.2, animations: {
-            blurEffectView.alpha = 0
-        }) { _ in
-            blurEffectView.removeFromSuperview()
-            self.blurEffectView = nil
+        
+        viewModel.showLoader = {
+            DispatchQueue.main.async {
+                LoaderView.showLoader(in: self.view)
+            }
+        }
+        
+        viewModel.hideLoader = {
+            DispatchQueue.main.async {
+                LoaderView.hideLoader()
+            }
+        }
+        
+        viewModel.handleError = { title, message in
+            DispatchQueue.main.async {
+                self.showAlert(message: message, title: title)
+            }
         }
     }
     
     private func setupNavigationBar() {
-        title = "Crypto Coins"
+        title = Localization.localizedString(for: "coin",defaultValue: "Coin")
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.tintColor = .systemBlue
         
         let searchController = UISearchController(searchResultsController: nil)
         searchController.searchBar.delegate = self
         searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "Search Crypto Coins"
+        searchController.searchBar.placeholder = Localization.localizedString(for: "search_crypto_coins",defaultValue: "Search Crypto Coins")
         searchController.searchBar.searchBarStyle = .minimal
         searchController.searchBar.tintColor = .systemBlue
         navigationItem.searchController = searchController
@@ -95,6 +94,7 @@ class CryptoListViewController: UIViewController {
         navigationItem.hidesSearchBarWhenScrolling = false
     }
     
+    //MARK: - Filter View Methods
     @objc private func hideFilterOptions() {
         UIView.animate(withDuration: 0.3, animations: {
             self.filterView?.frame.origin.y = self.view.frame.height
@@ -119,7 +119,7 @@ class CryptoListViewController: UIViewController {
         filterView?.onCancelFilters = { [weak self] in
             self?.hideFilterOptions()
         }
-        
+                
         filterView?.selectedFilters = selectedFilterOptions
         filterView?.updateButtonStates()
         
@@ -139,14 +139,7 @@ class CryptoListViewController: UIViewController {
         viewModel.filterCoins(isActive: isActive, isInactive: isInactive, onlyCoins: onlyCoins, isNew: isNew, onlyTokens: onlyTokens)
     }
     
-    private func updateNoDataView() {
-        if viewModel.isFilteredCoinsEmpty {
-            showNoDataView()
-        } else {
-            hideNoDataView()
-        }
-    }
-    
+    //MARK: - NoData View Methods
     private func showNoDataView() {
         if noDataView == nil {
             let newNoDataView = NoDataView(frame: .zero)
@@ -179,30 +172,40 @@ class CryptoListViewController: UIViewController {
         }
     }
     
-    private func setupBindings() {
-        viewModel.reloadTableView = { [weak self] in
-            DispatchQueue.main.async {
-                self?.tableView.reloadData()
-                self?.updateNoDataView()
-            }
+    private func updateNoDataView() {
+        if viewModel.isFilteredCoinsEmpty {
+            showNoDataView()
+        } else {
+            hideNoDataView()
         }
-        
-        viewModel.showLoader = {
-            DispatchQueue.main.async {
-                LoaderView.showLoader(in: self.view)
-            }
+    }
+    
+    //MARK: - BlurEffect View Methods
+    private func setupBlurEffect() {
+        guard blurEffectView == nil else { return }
+        let blurEffect = UIBlurEffect(style: .dark)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = view.bounds
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        blurEffectView.alpha = 0
+        view.insertSubview(blurEffectView, belowSubview: self.view)
+        self.blurEffectView = blurEffectView
+    }
+    
+    private func showBlurEffect() {
+        setupBlurEffect()
+        UIView.animate(withDuration: 0.2) {
+            self.blurEffectView?.alpha = 1
         }
-        
-        viewModel.hideLoader = {
-            DispatchQueue.main.async {
-                LoaderView.hideLoader()
-            }
-        }
-        
-        viewModel.handleError = { title, message in
-            DispatchQueue.main.async {
-                self.showAlert(message: message, title: title)
-            }
+    }
+    
+    private func hideBlurEffect() {
+        guard let blurEffectView = blurEffectView else { return }
+        UIView.animate(withDuration: 0.2, animations: {
+            blurEffectView.alpha = 0
+        }) { _ in
+            blurEffectView.removeFromSuperview()
+            self.blurEffectView = nil
         }
     }
 }
