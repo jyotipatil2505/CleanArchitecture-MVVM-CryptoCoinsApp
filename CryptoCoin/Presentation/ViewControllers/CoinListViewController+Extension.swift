@@ -17,7 +17,7 @@ extension CryptoListViewController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "CryptoTableViewCell", for: indexPath) as? CryptoTableViewCell else {
             return UITableViewCell()
         }
-        
+        cell.selectionStyle = .none
         let coin = viewModel.filteredCoins[indexPath.row]
         var image = coin.isActive ? UIImage(named: "activeCoin") : UIImage(named: "inactiveCoin")
         image = coin.type == "token" ? UIImage(named: "token") : image
