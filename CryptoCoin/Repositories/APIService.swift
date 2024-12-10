@@ -4,7 +4,6 @@
 //
 //  Created by Jyoti Patil on 21/10/24.
 //
-
 import Foundation
 
 /* APIService Handled the logic for fetching crypto coins list from the API */
