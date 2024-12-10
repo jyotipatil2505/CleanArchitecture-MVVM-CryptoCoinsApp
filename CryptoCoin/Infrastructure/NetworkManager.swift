@@ -7,9 +7,9 @@
 
 import Foundation
 
-class APIManager {
+class NetworkManager {
     
-    static let shared = APIManager()
+    static let shared = NetworkManager()
     
     private init() {}
     

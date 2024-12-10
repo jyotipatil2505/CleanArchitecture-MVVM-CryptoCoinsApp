@@ -19,7 +19,7 @@ class CryptoListViewController: UIViewController {
     
     //MARK: - Private Methods
     private func initializeViewModel() {
-        let apiService = APIService() // Assuming it's already implemented
+        let apiService = APIServiceManager() // Assuming it's already implemented
         let networkDataSource = CryptoNetworkDataSourceImpl(apiService: apiService)
         let localDataSource = CryptoLocalDataSourceImpl()
         let repository = CryptoRepository(networkDataSource: networkDataSource, localDataSource: localDataSource)
