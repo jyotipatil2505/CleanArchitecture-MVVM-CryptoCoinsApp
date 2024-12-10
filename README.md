@@ -42,13 +42,13 @@ The CryptoFinder App is a user-friendly cryptocurrency coin listing application 
 ## Screenshots
 
 #### CryptoCoinsList Screen
-<img src="https://github.com/jyotipatil2505/CleanArchitecture-MVVM-CryptoCoinsApp/blob/main/CryptoCoin/Screenshots/CryptoCoinListScreen.png" alt="Home Screen" width="240" />
+<img src="https://github.com/jyotipatil2505/CleanArchitecture-MVVM-CryptoCoinsApp/blob/main/CryptoCoin/Screenshots/CryptoCoinListScreen.png" alt="CryptoCoinsList Screen" width="240" />
 
 #### Filter Coins by Status/Type View
-<img src="https://github.com/jyotipatil2505/CleanArchitecture-MVVM-CryptoCoinsApp/blob/main/CryptoCoin/Screenshots/FilterView.png" alt="Article Detail Screen" width="240" />
+<img src="https://github.com/jyotipatil2505/CleanArchitecture-MVVM-CryptoCoinsApp/blob/main/CryptoCoin/Screenshots/FilterView.png" alt="Filter Coins by Status/Type View" width="240" />
 
 #### Search for a Coin Screen
-<img src="https://github.com/jyotipatil2505/CleanArchitecture-MVVM-CryptoCoinsApp/blob/main/CryptoCoin/Screenshots/SearchedCryptoCoinList.png" alt="Article Detail Screen" width="240" />
+<img src="https://github.com/jyotipatil2505/CleanArchitecture-MVVM-CryptoCoinsApp/blob/main/CryptoCoin/Screenshots/SearchedCryptoCoinList.png" alt="Search for a Coin Screen" width="240" />
 
 
 ## Architecture
@@ -74,9 +74,9 @@ This project follows the **Clean Architecture - Model-View-ViewModel** architect
   CryptoCoin/
   |
   ├── Screenshots/
-  │   ├── Bookmarks.png                                     # Displays the list of bookmarked articles, allowing users to easily access their saved content.
-  │   ├── TopHeadlines.png                                  # Shows the screen displaying the top headlines, presenting an overview of the latest articles available in the news
-  │   └── ArticleDetails.png                                # Illustrates the detailed view of an article, providing users with in-depth information and content related to the selected news item.
+  │   ├── CryptoCoinListScreen.png                          # Displays the main screen of the CryptoCoin app, showing a list of available cryptocurrency coins.
+  │   ├── FilterView.png                                    # Demonstrates the filter functionality within the app
+  │   └── SearchedCryptoCoinList.png                        # Illustrates the detailed view of the searched list of cryptocurrency coins
   ├── Application/                                          # Core presentation layer of the application, handling UI logic and user interaction.
   │   ├── ViewModels                                        # Contains logic to manage the UI data.
   │   │   ├── CryptoListViewModel.swift                     # Manages the logic for fetching and preparing crypto coin data for display in the UI.
@@ -111,7 +111,8 @@ This project follows the **Clean Architecture - Model-View-ViewModel** architect
   │   ├── Repositories                                      # Concrete implementations of data repositories.
   │   │   ├── CryptoRepository.swift                        # Implements methods to fetch and manage crypto coin data from local or network sources.
   ├── Core/                                                 # Contains shared resources and utility classes.
-  │   ├── Constants.swift                                   # Stores app-wide constants like FilterOptions, Colors etc.
+  │   ├── Localization.swift                                # Handles App wide localization.
+  │   ├── Constants.swift                                   # Stores app-wide constants like FilterOptions, Layout constants, spacing etc.
   │   ├── Extensions.swift                                  # Adds extensions to existing classes for added functionality.
   │   ├── Helpers.swift                                     # Utility functions to simplify common tasks.
   │   ├── Reachability.swift                                # Handles network connectivity checks.
@@ -126,18 +127,20 @@ This project follows the **Clean Architecture - Model-View-ViewModel** architect
   │   │   │   NetworkError.swift                            # Defines network-related errors.
   │   │   │   APIService.swift                              # Implements network service operations.
   |── Resources/
+  │   ├── Locale                                            
+  │   │   ├── Localizable.strings                           # Handles localization and internationalization for the app
   │   ├── Main.storyboard                                   # Primary storyboard for the application UI.
   │   ├── Assets.xcassets                                   # Images and icons used in the app.
   │   ├── LaunchScreen.storyboard                           # Splash screen shown at app launch.
   │   ├── Info.plist                                        # Configuration file for app metadata.
   ├── CryptoCoinTests/
-  │   ├── Domain                                            # Domain Layer for Unit Test Cases
-  │   │   ├── GetCryptoCoinsUseCaseTests.swift              # Tests for GetCryptoCoinsUseCase
-  │   ├── Presentation                                      # Presentation Layer for Unit Test Cases
-  │   │   ├── CryptoListViewModelTests.swift                # Tests for CryptoListViewModel.
+  │   ├── Domain                                            # Contains test cases related to the domain layer of the application
+  │   │   ├── GetCryptoCoinsUseCaseTests.swift              # Contains unit tests for the GetCryptoCoinsUseCase class
+  │   ├── Presentation                                      # Includes test cases for the presentation layer of the application
+  │   │   ├── CryptoListViewModelTests.swift                # Contains unit tests for the CryptoListViewModel
   │   ├── Mocks                                             # Mock Layer For Unit Test Cases
-  │   │   ├── MockGetCryptoCoinsUseCase.swift               # Mock implementation of the use case for testing.
-  │   │   ├── MockCryptoRepository.swift                    # Mock repository for testing data operations.
+  │   │   ├── MockGetCryptoCoinsUseCase.swift               # Provides a mock implementation of the GetCryptoCoinsUseCase for testing purposes.
+  │   │   ├── MockCryptoRepository.swift                    # Contains a mock repository for testing data operations.
   ├── CryptoCoin.xcworkspace                                # Xcode project
   ├── README.md                                             # Project documentation
 
