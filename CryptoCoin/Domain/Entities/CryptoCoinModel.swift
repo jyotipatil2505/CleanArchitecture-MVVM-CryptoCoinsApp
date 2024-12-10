@@ -24,5 +24,3 @@ struct CryptoCoinModel: Decodable {
         case isNew = "is_new"       // Map "is_new" to "isNew"
     }
 }
-
-
