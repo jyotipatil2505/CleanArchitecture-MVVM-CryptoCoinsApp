@@ -8,9 +8,9 @@
 import Foundation
 
 class CryptoNetworkDataSourceImpl: CryptoNetworkDataSource {
-    private let apiService: APIService
+    private let apiService: APIServiceManager
 
-    init(apiService: APIService) {
+    init(apiService: APIServiceManager) {
         self.apiService = apiService
     }
 
