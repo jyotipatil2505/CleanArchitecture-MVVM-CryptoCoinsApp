@@ -9,7 +9,7 @@ import Foundation
 
 /* APIService Handled the logic for fetching crypto coins list from the API */
 class APIService: APIServiceProtocol {
-        func fetchCryptoCoins() async throws -> [CryptoCoinModel] {
+    func fetchCryptoCoins() async throws -> [CryptoCoinModel] {
         let endpoint = Endpoint.createGETEndpoint(path: "", queryItems: [])
         do {
             let cryptoCoins: [CryptoCoinModel] = try await APIManager.shared.request(endpoint: endpoint)
